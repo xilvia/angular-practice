@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { getSyntheticPropertyName } from '@angular/compiler/src/render3/util';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,10 @@ export class AppComponent {
   getName(): string {
     return `Bond, James Bond`;
   }
-}
+  
+
+  
+  }
+  
+
 
