@@ -10,10 +10,10 @@ export class AppComponent {
   title = 'component-interaction-demo';
 
   heroes: Hero[] = [
-    { name: "Bombasto", address: "New York", superpower: "Can explode" },
-    { name: "IceMan", address: "New York", superpower: "Can freeze" },
-    { name: "Captain Planet", address: "Budapest", superpower: "Can save the Earth" }
-  ]; //mindig az aktuális hős adatait jelenítse meg az appcomponent
+    {name: "Bosmbasto", address: "New York", superpower: "Can explode"},
+    {name: "IceMan", address: "New York", superpower: "Can frose"},
+    {name: "Captain Planet", address: "Budapest", superpower: "Can save the Earth"},
+  ];
 
   selectedHero: Hero = this.heroes[0];
 
@@ -21,7 +21,7 @@ export class AppComponent {
     this.selectedHero = hero;
   }
 
-  heroChanged(): void {
+  heroChanged(hero: Hero): void {
     console.log('changed Hero: ', hero);
   }
 }
