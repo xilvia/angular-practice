@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h1>Pipe & Directive demo</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <select class="form-control"
+              [(ngModel)]="filterKey">
+              <!-- itt van alapvetően beállítva, hogy a filterKey-ben keressen -->
+        <option value="name"
+                selected>Name</option>
+                <!-- mivel a keresés már be van állítva name-re, itt a selected tkp feleslegessé vált -->
+        <option value="email">Email</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <input class="form-control"
+             type="text"
+             [(ngModel)]="filterPhrase">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class=" table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Male</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of studentList | filter:filterKey:filterPhrase; index as i">
+            <!-- filter:'name':'b' - name a key, a b pedig a phrase, így pl. rebeka lesz a találat -->
+            <!-- {{ student | json}}  -->
+            <!-- csak hogy látni lehessen, mi van a student változóban, erre ez a json-os előbbi sor -->
+
+            <td>{{ (i+1) }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.gender }}</td>
+            <td><input class="form-control"
+                     type="checkbox"
+                     [(ngModel)]="student.gender"></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<pre>
+  {{ studentList | json }}
+</pre>
