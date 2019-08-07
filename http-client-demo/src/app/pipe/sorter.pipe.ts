@@ -6,14 +6,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SorterPipe implements PipeTransform {
 
 
-  transform(baseArray: any[], key: string ='' ): any {
-    if (key === ''){
+  transform(baseArray: any[], key: string = '', direction: number = 1): any {
+    if (key === '') {
       return baseArray; //ha semmilyen rendezési elvet nem választott a júzer
     }
-   
-baseArray.sort( (a, b) => {
-  return (a[key].toString() as string).localeCompare( b[key].toString() );
-});
+
+    baseArray.sort((a, b) => {
+      return (a[key].toString() as string).localeCompare(b[key].toString()) * direction;
+    });
     return baseArray;
   }
 

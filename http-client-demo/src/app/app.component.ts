@@ -14,7 +14,8 @@ export class AppComponent implements OnInit {
   filmList: Film[] = [];
   newFilm: Film = new Film;
   filterPhrase: string = '';
-  orderKey: string = ''
+  orderKey: string = '';
+  orderDirection: number = 1;
   changeCounter: number = 0;
 
 
@@ -33,11 +34,12 @@ export class AppComponent implements OnInit {
     )
   }
 
-  onUpdate(film: Film) {
+  onUpdate(film: any) {
+    parseInt(film.release);
     this.filmService.update(film).subscribe(
       response => {
         this.changeCounter++;
-       },
+      },
       err => console.error(err)
     )
   }
@@ -48,7 +50,7 @@ export class AppComponent implements OnInit {
       film => {
         this.filmList.push(film),
           this.newFilm = new Film;
-          this.changeCounter++;
+        this.changeCounter++;
 
       },
       err => console.error(err)
@@ -61,7 +63,27 @@ export class AppComponent implements OnInit {
     )
   }
 
-  setSorterKey(key: string): void {
+  setSorterKey(key: string): void { //pl. title a key
+    if (key === this.orderKey) {
+      this.orderDirection = this.orderDirection === -1 ? 1 : -1;
+    } else {
+      this.orderDirection = 1;
+    }
     this.orderKey = key;
   }
+
+  /*
+  baseArray.sort((a, b) => {
+    if(typeof a[key] === 'number') {
+      return ((a[key] - b[key] * direction);
+    } else {
+      return (a[key].toString() as string)
+      .localeCompare( b[key].toString() ) * direction;
+    
+    }
+  });
+  return baseArray;
+}
+  */
+
 }
