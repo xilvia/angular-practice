@@ -1,0 +1,34 @@
+{
+  "film": [
+    {
+      "id": 1,
+      "title": "Sin City",
+      "release": "2005",
+      "actor": "Clive Owen"
+    },
+    {
+      "id": 2,
+      "title": "Ben Hur",
+      "release": "1956",
+      "actor": "Charlton Heston"
+    },
+    {
+      "id": 3,
+      "title": "Edge Of Tomorrow",
+      "release": "2011",
+      "actor": "Tom Cruise"
+    },
+    {
+      "id": 4,
+      "title": "Star Wars",
+      "release": "1977",
+      "actor": "Harrison Ford"
+    },
+    {
+      "id": 5,
+      "title": "Desperado",
+      "release": "1995",
+      "actor": "Antonio Banderas"
+    }
+  ]
+}
