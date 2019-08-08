@@ -20,13 +20,21 @@
             <th (click)="setSorterKey('title')">Title</th>
             <th (click)="setSorterKey('release')">Release</th>
             <th (click)="setSorterKey('actor')">Actor</th>
+<<<<<<< HEAD
             <th>Commands</th>
           </tr>
         </thead>
+=======
+            <th>commands</th>
+          </tr>
+        </thead>
+
+>>>>>>> 14608995eb2f047106f52941e090f98cf6a44cba
         <tbody>
           <tr>
             <td></td>
             <td>
+<<<<<<< HEAD
               <input class="form-control"
                      type="text"
                      [(ngModel)]="newFilm.title">
@@ -67,10 +75,43 @@
                         (click)="onUpdate(film)">Update</button>
                 <button class="btn btn-danger"
                         (click)="onDelete(film)">Delete</button>
+=======
+              <input class="form-control" type="text" [(ngModel)]="newFilm.title">
+            </td>
+            <td>
+                <input class="form-control" type="text" [(ngModel)]="newFilm.release">
+            </td>
+            <td>
+                <input class="form-control" type="text" [(ngModel)]="newFilm.actor">
+            </td>
+            <td>
+              <button (click)="onCreate()" class="btn btn-success">add</button>
+            </td>
+          </tr>
+          <tr *ngFor="let film of filmList | filter:filterPhrase:changeCounter | sorter:orderKey:orderDirection:changeCounter">
+            <td>{{ film.id }}</td>
+            <td>
+              <input [(ngModel)]="film.title" type="text" class="form-control">
+            </td>
+            <td>
+              <input [(ngModel)]="film.release" type="text" class="form-control">
+            </td>
+            <td>
+              <input [(ngModel)]="film.actor" type="text" class="form-control">
+            </td>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-info"(click)="onUpdate(film)">update</button>
+                <button class="btn btn-danger" (click)="onDelete(film)">delete</button>
+>>>>>>> 14608995eb2f047106f52941e090f98cf6a44cba
               </div>
             </td>
           </tr>
         </tbody>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 14608995eb2f047106f52941e090f98cf6a44cba
       </table>
     </div>
   </div>

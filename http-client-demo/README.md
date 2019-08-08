@@ -1,6 +1,10 @@
 # HttpClientDemo
 
+<<<<<<< HEAD
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
+=======
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+>>>>>>> 14608995eb2f047106f52941e090f98cf6a44cba
 
 ## Development server
 

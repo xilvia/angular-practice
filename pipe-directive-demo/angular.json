@@ -13,12 +13,25 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+
+            "optimization": false,
+            "outputHashing": "none",
+            "sourceMap": false,
+            "extractCss": true,
+            "namedChunks": false,
+            "showCircularDependencies": false,
+            "aot": true,
+            "extractLicenses": false,
+            "statsJson": false,
+            "progress": true,
+            "vendorChunk": true,
+            "buildOptimizer": false,
+
             "outputPath": "dist/pipe-directive-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -31,10 +44,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -44,11 +59,13 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [{
-                "type": "initial",
-                "maximumWarning": "2mb",
-                "maximumError": "5mb"
-              }]
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -112,7 +129,6 @@
           }
         }
       }
-    }
-  },
+    }},
   "defaultProject": "pipe-directive-demo"
 }

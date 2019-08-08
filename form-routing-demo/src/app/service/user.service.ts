@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { User } from '../model/user';
 import { Injectable } from '@angular/core';
+=======
+import { Injectable } from '@angular/core';
+import { User } from '../model/user';
+>>>>>>> 14608995eb2f047106f52941e090f98cf6a44cba
 
 @Injectable({
   providedIn: 'root'

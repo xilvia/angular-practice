@@ -2,6 +2,7 @@
   "film": [
     {
       "id": 1,
+<<<<<<< HEAD
       "title": "Sin City",
       "release": "2005",
       "actor": "Clive Owen"
@@ -29,6 +30,47 @@
       "title": "Desperado",
       "release": "1995",
       "actor": "Antonio Banderas"
+=======
+      "title": "Edge of Tomorrow",
+      "release": 2011,
+      "actor": "Horváth Szilvia"
+    },
+    {
+      "id": 3,
+      "title": "Ben Hur",
+      "release": 1956,
+      "actor": "Charlton Heston"
+    },
+    {
+      "id": 4,
+      "title": "Titanic",
+      "release": "1998",
+      "actor": "Leo Cappuchino"
+    },
+    {
+      "id": 5,
+      "title": "Sound of Music",
+      "release": "1961",
+      "actor": "Julie Andrews"
+    },
+    {
+      "id": 6,
+      "title": "Desperado",
+      "release": "2001",
+      "actor": "Balogh Antal"
+    },
+    {
+      "id": 7,
+      "title": "Indul a Bakterház",
+      "release": 1990,
+      "actor": "OI"
+    },
+    {
+      "id": 8,
+      "title": "Romulus the Hero",
+      "release": "5",
+      "actor": "Julius Caesar"
+>>>>>>> 14608995eb2f047106f52941e090f98cf6a44cba
     }
   ]
 }

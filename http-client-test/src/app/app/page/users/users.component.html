@@ -1,0 +1,34 @@
+<div>
+  <h1> {{ title }} </h1>
+
+  <table class="table table-primary table-striped">
+    <thead class="col">
+      <tr>
+        <th *ngFor="let item of thead">{{item}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let">
+        <td><input class="form-control"
+                 type="text"
+                 [(ngModel)]="id"></td>
+        <td><input class="form-control"
+                 type="text"
+                 [(ngModel)]=".name.last+' '+.name.first"></td>
+        <td><input class="form-control"
+                 type="checkbox"
+                 [(ngModel)]=".isActive"
+                 ng-checked=".isActive"></td>
+        <td><input class="form-control"
+                 type="number"
+                 [(ngModel)]=".age"></td>
+        <td><input class="form-control"
+                 type="email"
+                 [(ngModel)]=".email"></td>
+        <td><input class="form-control"
+                 type="text"
+                 [(ngModel)]=".phone"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
