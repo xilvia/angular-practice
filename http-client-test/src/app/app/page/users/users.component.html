@@ -8,26 +8,26 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let">
+      <tr *ngFor="let user of userList">
         <td><input class="form-control"
                  type="text"
-                 [(ngModel)]="id"></td>
+                 [(ngModel)]="user.id"></td>
         <td><input class="form-control"
                  type="text"
-                 [(ngModel)]=".name.last+' '+.name.first"></td>
+                 [(ngModel)]="user.name.last+' '+user.name.first"></td>
         <td><input class="form-control"
                  type="checkbox"
-                 [(ngModel)]=".isActive"
-                 ng-checked=".isActive"></td>
+                 [(ngModel)]="user.isActive"
+                 ng-checked="user.isActive"></td>
         <td><input class="form-control"
                  type="number"
-                 [(ngModel)]=".age"></td>
+                 [(ngModel)]="user.age"></td>
         <td><input class="form-control"
                  type="email"
-                 [(ngModel)]=".email"></td>
+                 [(ngModel)]="user.email"></td>
         <td><input class="form-control"
                  type="text"
-                 [(ngModel)]=".phone"></td>
+                 [(ngModel)]="user.phone"></td>
       </tr>
     </tbody>
   </table>
