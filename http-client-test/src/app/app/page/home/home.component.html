@@ -1,27 +1,37 @@
+<nav>
+  <a routerLink="/users">Users</a>
+  <a routerLink="/user-edit">User edit</a>
+</nav>
+<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 <div class="card border-primary mb-3"
      style="max-width: 18rem;">
-  <div class="card-header">Header</div>
+ 
   <div class="card-body text-primary">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+    <h5 class="card-title">Number of Users</h5>
+    <p class="card-text">The number of active users is {{numberOfActiveUsers}}.
+    </p>
+    <p class="card-text">The number of inactive users is {{numberOfInactiveUsers}}.
+    </p>
+    <p class="card-text">The number of users altogether is {{numberOfAllUsers}}.
     </p>
   </div>
 </div>
 <div class="card border-primary mb-3"
      style="max-width: 18rem;">
-  <div class="card-header">Header</div>
+  
   <div class="card-body text-primary">
-    <h5 class="card-title">Secondary card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+    <h5 class="card-title">User's balance</h5>
+    <p class="card-text">The sum of the users's balance is {{ sumBalance }} $ currently.
     </p>
   </div>
 </div>
 <div class="card border-primary mb-3"
      style="max-width: 18rem;">
-  <div class="card-header">Header</div>
+ 
   <div class="card-body text-primary">
-    <h5 class="card-title">Success card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+    <h5 class="card-title">Apple fans</h5>
+    <p class="card-text">{{ numberOfAppleFans }} users' favourite fruit is apple.
     </p>
   </div>
 </div>

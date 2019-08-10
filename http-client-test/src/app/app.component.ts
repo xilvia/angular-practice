@@ -9,55 +9,56 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'Data Table';
+  title = 'AppUsers';
   userList: User[];
   userSubscription: Subscription;
+  newUser: User = new User();
+
+
 
   constructor(
     private userService: UserService
-  ) {
-
-  }
+  ) {}
 
   ngOnInit() {
     this.userSubscription = this.userService.getAll().subscribe(
       users => this.userList = users
     );
+    // console.log(this.userList, this.userService, User, 'seeee')
   }
 
   ngOnDestroy() {
     this.userSubscription.unsubscribe();
   }
 
-   // onDelete(user: User) {
-  //   this.filmService.remove(film.id).subscribe(
-  //     response => {
-  //       let index = this.filmList.indexOf(film);
-  //       this.filmList.splice(index, 1);
-  //       this.changeCounter++;
-  //     },
-  //     err => console.error(err)
-  //     )
-  //   }
+  onDelete(user: User) {
+    this.userService.remove(user.id).subscribe(
+      response => {
+        let index = this.userList.indexOf(user);
+        this.userList.splice(index, 1);
+        // this.changeCounter++;
+      },
+      err => console.error(err)
+    )
+  }
 
-  //   onUpdate(film: any) {
-  //     parseInt(film.release);
-  //     this.filmService.update(film).subscribe(
-  //       response => {
-  //         this.changeCounter++;
-  //       },
-  //       err => console.log(err)
-  //       )
-  //     }
+  onUpdate(user: any) {
+    this.userService.update(user).subscribe(
+      response => {
+        // this.changeCounter++;
+      },
+      err => console.log(err)
+    )
+  }
 
-  //     onCreate() {
-  //       this.filmService.create(this.newFilm).subscribe(
-  //         film => {
-  //           this.filmList.push(film);
-  //           this.newFilm = new Film();
-  //           this.changeCounter++;
-  //         },
-  //         err => console.error(err)
-  //         );
-  // }
+  onCreate() {
+    this.userService.create(this.newUser).subscribe(
+      user => {
+        this.userList.push(user);
+        this.newUser = new User();
+        // this.changeCounter++;
+      },
+      err => console.error(err)
+    );
+  }
 }

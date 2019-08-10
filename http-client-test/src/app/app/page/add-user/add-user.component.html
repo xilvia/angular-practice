@@ -1,1 +1,40 @@
-<p>add-user works!</p>
+<h1>Add User</h1>
+ <!-- <router-outlet></router-outlet> -->
+<form (submit)="onSubmit($event)"
+      action="">
+
+  <div class="form-group">
+    <label for="">Name</label>
+    <input class="form-control"
+           type="text">
+  </div>
+  <div class="form-group">
+    <label class="form-check-label"
+           for="active">Active</label>
+    <input class="form-control"
+           type="checkbox">
+  </div>
+  <div class="form-group">
+    <label for="">Age</label>
+    <input name="age"
+           type="text"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="">Email</label>
+    <input name="email"
+           type="email"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="">Phone</label>
+    <input name="tel"
+           type="tel"
+           class="form-control">
+  </div>
+
+  <button class="btn btn-primary">
+    Send
+  </button>
+
+</form>

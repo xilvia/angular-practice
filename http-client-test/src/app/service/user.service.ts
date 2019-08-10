@@ -9,10 +9,14 @@ import { User } from '../model/user';
 export class UserService {
 
   jsonUrl: string = 'http://localhost:3000/user';
+  
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) { this.http.get(this.jsonUrl).subscribe(
+    list => console.log(list)
+
+  ); }
 
   getAll(): Observable<User[]> {
     return this.http.get<User[]>(this.jsonUrl);
