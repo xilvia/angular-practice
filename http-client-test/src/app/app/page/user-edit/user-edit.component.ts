@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UserEditComponent implements OnInit {
 
-  user: User;
+  user: User = new User();
   userSubscription: any;
   userList: User[];
   changeCounter: number = 0;
@@ -21,6 +21,7 @@ export class UserEditComponent implements OnInit {
     private router: Router,
     private ar: ActivatedRoute,
   ) {
+
     this.ar.params.forEach(
       params => {
         console.log(params);
