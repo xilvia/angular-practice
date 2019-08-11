@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from './service/user.service';
 import { User } from './model/user';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -31,34 +33,5 @@ export class AppComponent implements OnInit, OnDestroy {
     this.userSubscription.unsubscribe();
   }
 
-  onDelete(user: User) {
-    this.userService.remove(user.id).subscribe(
-      response => {
-        let index = this.userList.indexOf(user);
-        this.userList.splice(index, 1);
-        // this.changeCounter++;
-      },
-      err => console.error(err)
-    )
-  }
-
-  onUpdate(user: any) {
-    this.userService.update(user).subscribe(
-      response => {
-        // this.changeCounter++;
-      },
-      err => console.log(err)
-    )
-  }
-
-  onCreate() {
-    this.userService.create(this.newUser).subscribe(
-      user => {
-        this.userList.push(user);
-        this.newUser = new User();
-        // this.changeCounter++;
-      },
-      err => console.error(err)
-    );
-  }
+ 
 }

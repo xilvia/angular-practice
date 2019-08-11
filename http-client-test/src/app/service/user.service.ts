@@ -7,6 +7,9 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class UserService {
+  get(id: any): User {
+    throw new Error("Method not implemented.");
+  }
 
   jsonUrl: string = 'http://localhost:3000/user';
   

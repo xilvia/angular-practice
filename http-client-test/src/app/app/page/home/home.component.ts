@@ -2,6 +2,7 @@ import { Component, OnInit, IterableDiffers } from '@angular/core';
 import { User } from '../../../model/user';
 import { UserService } from '../../../service/user.service';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,15 +13,25 @@ export class HomeComponent implements OnInit {
   userSubscription: any;
   userList: User[] = [];
 
+
   numberOfAllUsers: number = 0;
   numberOfActiveUsers: number = 0;
   numberOfInactiveUsers: number = 0;
   sumBalance: number = 0;
   numberOfAppleFans: number = 0;
 
+  
+  
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {
+    
+   
+  }
+
+  ngOnInit() {
+    
     this.userSubscription = this.userService.getAll().subscribe(
       users => {
 
@@ -44,9 +55,6 @@ export class HomeComponent implements OnInit {
 
       }
     )
-  }
-
-  ngOnInit() {
   }
 
 }

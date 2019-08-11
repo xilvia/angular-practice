@@ -1,40 +1,53 @@
-<h1>Add User</h1>
- <!-- <router-outlet></router-outlet> -->
+<h1>Add new User</h1>
+
 <form (submit)="onSubmit($event)"
       action="">
-
   <div class="form-group">
-    <label for="">Name</label>
-    <input class="form-control"
-           type="text">
+    <label for="">First Name</label>
+    <input name="firstName"
+           class="form-control"
+           type="text"
+           [(ngModel)]="user.name.first">
+  </div>
+  <div class="form-group">
+    <label for="">Last Name</label>
+    <input name="lastName"
+           class="form-control"
+           type="text"
+           [(ngModel)]="user.name.last">
   </div>
   <div class="form-group">
     <label class="form-check-label"
            for="active">Active</label>
-    <input class="form-control"
+    <input name="isActive"
+           class="form-control"
+           [(ngModel)]="user.isActive"
            type="checkbox">
   </div>
   <div class="form-group">
     <label for="">Age</label>
     <input name="age"
            type="text"
-           class="form-control">
+           class="form-control"
+           [(ngModel)]="user.age">
   </div>
   <div class="form-group">
     <label for="">Email</label>
     <input name="email"
            type="email"
-           class="form-control">
+           class="form-control"
+           [(ngModel)]="user.email">
   </div>
   <div class="form-group">
     <label for="">Phone</label>
     <input name="tel"
            type="tel"
-           class="form-control">
+           class="form-control"
+           [(ngModel)]="user.Phone">
   </div>
 
   <button class="btn btn-primary">
-    Send
+    Add
   </button>
 
 </form>

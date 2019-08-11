@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { HomeComponent } from './app/page/home/home.component';
 import { UsersComponent } from './app/page/users/users.component';
@@ -13,7 +15,7 @@ const routes: Routes = [
     redirectTo: 'home', pathMatch: 'full' 
   },
   {
-    path: "edit-user/:id",
+    path: "user/:id",
     component: UserEditComponent
   },
   {

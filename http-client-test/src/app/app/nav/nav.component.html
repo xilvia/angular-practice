@@ -1,17 +1,19 @@
-<nav>
-  <ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link active"
-         routerLink="/">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link"
-         routerLink="/users">Users</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link"
-           routerLink="/app">AppUsers</a>
+<div>
+  <nav>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active"
+           routerLink="/"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}">Home</a>
       </li>
-  </ul>
-</nav>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/users"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}">Users</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 <router-outlet></router-outlet>

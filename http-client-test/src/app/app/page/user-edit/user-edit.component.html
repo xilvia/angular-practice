@@ -1,40 +1,50 @@
-<nav>
-        <a routerLink="/user-edit">edit</a>
-      </nav>
-      <!-- <router-outlet></router-outlet> -->
+<!-- <router-outlet></router-outlet> -->
 <h1>Edit User</h1>
- <router-outlet></router-outlet>
-<form (submit)="onSave($event)"
-      action="">
 
+<form (submit)="onSubmit($event)"
+      action="">
   <div class="form-group">
-    <label for="">Name</label>
-    <input class="form-control"
+    <label for="">First Name</label>
+    <input name="firstName"
+           class="form-control"
+           [(ngModel)]="user.name.first"
+           type="text">
+  </div>
+  <div class="form-group">
+    <label for="">Last Name</label>
+    <input name="lastName"
+           class="form-control"
+           [(ngModel)]="user.name.last"
            type="text">
   </div>
   <div class="form-group">
     <label class="form-check-label"
            for="active">Active</label>
-    <input class="form-control"
+    <input name="isActive"
+           class="form-control"
+           [(ngModel)]="user.isActive"
            type="checkbox">
   </div>
   <div class="form-group">
     <label for="">Age</label>
     <input name="age"
-           type="text"
-           class="form-control">
+           class="form-control"
+           [(ngModel)]="user.age"
+           type="text">
   </div>
   <div class="form-group">
     <label for="">Email</label>
     <input name="email"
-           type="email"
-           class="form-control">
+           class="form-control"
+           [(ngModel)]="user.email"
+           type="email">
   </div>
   <div class="form-group">
     <label for="">Phone</label>
     <input name="tel"
-           type="tel"
-           class="form-control">
+           class="form-control"
+           [(ngModel)]="user.phone"
+           type="tel">
   </div>
 
   <button class="btn btn-primary">
