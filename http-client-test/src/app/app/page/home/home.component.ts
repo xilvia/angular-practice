@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   userSubscription: any;
   userList: User[] = [];
-  numberOfAllUsers: number = 0;
   numberOfActiveUsers: number = 0;
   numberOfInactiveUsers: number = 0;
+  numberOfAllUsers: number = 0;
   sumBalance: number = 0;
   numberOfAppleFans: number = 0;
 
@@ -31,6 +31,8 @@ export class HomeComponent implements OnInit {
           } else {
             this.numberOfInactiveUsers = this.numberOfInactiveUsers + 1;
           }
+          this.numberOfAllUsers = this.numberOfActiveUsers + this.numberOfInactiveUsers;
+
           this.numberOfAppleFans = user.favoriteFruit === 'apple'
             ? this.numberOfAppleFans + 1
             : this.numberOfAppleFans;
