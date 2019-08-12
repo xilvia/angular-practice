@@ -1,4 +1,4 @@
-<h1>Add new User</h1>
+<h2>Add new User</h2>
 
 <form (submit)="onSubmit($event)"
       action="">
@@ -17,12 +17,13 @@
            [(ngModel)]="user.name.last">
   </div>
   <div class="form-group">
-    <label class="form-check-label"
-           for="active">Active</label>
-    <input name="isActive"
-           class="form-control"
-           [(ngModel)]="user.isActive"
-           type="checkbox">
+    <select name="isActive"
+            id="isActive"
+            class="form-control"
+            [(ngModel)]="user.isActive">
+      <option value="true">true</option>
+      <option value="false">false</option>
+    </select>
   </div>
   <div class="form-group">
     <label for="">Age</label>

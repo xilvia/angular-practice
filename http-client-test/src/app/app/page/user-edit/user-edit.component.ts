@@ -22,12 +22,12 @@ export class UserEditComponent implements OnInit {
     private ar: ActivatedRoute,
   ) {
 
-    this.ar.params.forEach(
-      params => {
-        console.log(params);
-        this.user = this.userService.get(params.id);
-      }
-    );
+    this.ar.params.subscribe(params => {
+      this.userService.getOne(params.id).subscribe(user => {
+        this.user = user
+      })
+    })
+
   }
 
   ngOnInit() {

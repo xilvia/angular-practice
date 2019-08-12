@@ -3,10 +3,10 @@
     {
       "id": 1,
       "guid": "99d82648-a621-4272-bb03-9dfae4ce570f",
-      "isActive": true,
+      "isActive": "true",
       "balance": "$1,442.75",
       "picture": "http://placehold.it/32x32",
-      "age": 25,
+      "age": "26",
       "eyeColor": "brown",
       "name": {
         "first": "Susana",
@@ -118,7 +118,7 @@
       "isActive": true,
       "balance": "$1,090.44",
       "picture": "http://placehold.it/32x32",
-      "age": 34,
+      "age": "37",
       "eyeColor": "brown",
       "name": {
         "first": "Margie",
@@ -171,14 +171,14 @@
     {
       "id": 5,
       "guid": "1e5a0f2e-4f79-49ad-a248-1c9a43e13828",
-      "isActive": false,
+      "isActive": true,
       "balance": "$1,288.82",
       "picture": "http://placehold.it/32x32",
-      "age": 27,
+      "age": "29",
       "eyeColor": "green",
       "name": {
         "first": "Rush",
-        "last": "Merritt"
+        "last": "Merrit"
       },
       "company": "NITRACYR",
       "email": "rush.merritt@nitracyr.biz",
@@ -5433,17 +5433,6 @@
       "favoriteFruit": "apple"
     },
     {
-      "id": 99,
-      "name": {
-        "first": "Kapuvári",
-        "last": ""
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "",
-      "phone": ""
-    },
-    {
       "id": 100,
       "name": {
         "first": "",
@@ -5457,156 +5446,17 @@
     {
       "id": 101,
       "name": {
-        "first": "",
-        "last": ""
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "",
-      "phone": ""
-    },
-    {
-      "id": 102,
-      "name": {
         "first": "Kapuvári",
-        "last": ""
+        "last": "Szilvia"
       },
-      "isActive": false,
+      "isActive": true,
       "age": 18,
-      "email": "",
-      "phone": ""
+      "email": "kapuvari.szilvia@gmail.com",
+      "phone": "",
+      "Phone": "205474284"
     },
     {
       "id": 103,
-      "name": {
-        "first": "Kapuvári",
-        "last": ""
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "",
-      "phone": ""
-    },
-    {
-      "id": 104,
-      "name": {
-        "first": "Szilvia",
-        "last": ""
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "",
-      "phone": ""
-    },
-    {
-      "id": 105,
-      "name": {
-        "first": "Kapuvári",
-        "last": "Szilvia"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
-      "id": 106,
-      "name": {
-        "first": "",
-        "last": ""
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "",
-      "phone": ""
-    },
-    {
-      "id": 107,
-      "name": {
-        "first": "Kapuvári",
-        "last": "Szilvia"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
-      "id": 108,
-      "name": {
-        "first": "Szilvia",
-        "last": "Kapuvári"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
-      "id": 109,
-      "name": {
-        "first": "Szilvia",
-        "last": "Kapuvári"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
-      "id": 110,
-      "name": {
-        "first": "Kapuvári",
-        "last": "Szilvia"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
-      "id": 111,
-      "name": {
-        "first": "Kapuvári",
-        "last": "Szilvia"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
-      "id": 112,
-      "name": {
-        "first": "Szilvia",
-        "last": "Kapuvári"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
-      "id": 113,
-      "name": {
-        "first": "Kapuvári",
-        "last": "Szilvia"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
-      "id": 114,
       "name": {
         "first": "Kapuvári",
         "last": "Szilvia"

@@ -1,33 +1,40 @@
+<h2> Stats </h2>
 
+<span> &nbsp;</span>
+<div class="container">
 
-<div class="card border-primary mb-3"
-     style="max-width: 18rem;">
-     
-  <div class="card-body text-primary">
-    <h5 class="card-title">Number of Users</h5>
-    <p class="card-text">The number of active users is {{numberOfActiveUsers}}.
-    </p>
-    <p class="card-text">The number of inactive users is {{numberOfInactiveUsers}}.
-    </p>
-    <p class="card-text">The number of users altogether is {{numberOfAllUsers}}.
-    </p>
-  </div>
-</div>
-<div class="card border-primary mb-3"
-     style="max-width: 18rem;">
-  
-  <div class="card-body text-primary">
-    <h5 class="card-title">User's balance</h5>
-    <p class="card-text">The sum of the users's balance is {{ sumBalance }} $ currently.
-    </p>
-  </div>
-</div>
-<div class="card border-primary mb-3"
-     style="max-width: 18rem;">
- 
-  <div class="card-body text-primary">
-    <h5 class="card-title">Apple fans</h5>
-    <p class="card-text">{{ numberOfAppleFans }} users' favourite fruit is apple.
-    </p>
+  <div class="row justify-content-md-center">
+    <div class="card col-4 bg-info"
+         id="userNumber">
+      <div class="card-body">
+        <h5 class="card-title">Number of Users</h5>
+        <p class="card-text">The number of active users is {{numberOfActiveUsers}}.
+        </p>
+        <p class="card-text">The number of inactive users is {{numberOfInactiveUsers}}.
+        </p>
+        <p class="card-text">The number of users altogether is {{numberOfAllUsers}}.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-1"></div>
+
+    <div class="card col-4 bg-info"
+         id="userBalance">
+      <div class="card-body">
+        <h5 class="card-title">User's balance</h5>
+        <p class="card-text">The sum of the users's balance is {{ sumBalance }} $ currently.
+        </p>
+      </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="card col-4 bg-info"
+         id="userBalance">
+      <div class="card-body">
+        <h5 class="card-title">Apple fans</h5>
+        <p class="card-text">{{ numberOfAppleFans }} users' favourite fruit is apple.
+        </p>
+      </div>
+    </div>
   </div>
 </div>

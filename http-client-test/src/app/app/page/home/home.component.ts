@@ -1,7 +1,6 @@
-import { Component, OnInit, IterableDiffers } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../../../model/user';
 import { UserService } from '../../../service/user.service';
-import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,47 +11,34 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   userSubscription: any;
   userList: User[] = [];
-
-
   numberOfAllUsers: number = 0;
   numberOfActiveUsers: number = 0;
   numberOfInactiveUsers: number = 0;
   sumBalance: number = 0;
   numberOfAppleFans: number = 0;
 
-  
-  
   constructor(
     private userService: UserService,
     private router: Router
-  ) {
-    
-   
-  }
+  ) { }
 
   ngOnInit() {
-    
     this.userSubscription = this.userService.getAll().subscribe(
       users => {
-
-        this.numberOfAllUsers = users.length;
-
-        for (let k in users) {
-          users[k].isActive === true ?
-            this.numberOfActiveUsers = this.numberOfActiveUsers + 1 :
-            this.numberOfInactiveUsers = this.numberOfInactiveUsers + 1
-        };
-
-        for (let k in users) {
-          users[k].favoriteFruit === 'apple' ? this.numberOfAppleFans = this.numberOfAppleFans + 1 :
-            this.numberOfAppleFans
-        };
-
-        for (let k in users) {
-          let currBalance = parseFloat(users[k].balance.replace("$", "").replace(",", ""));
-          this.sumBalance = this.sumBalance + currBalance;
-        }
-
+        users.forEach(user => {
+          if (user.isActive) {
+            this.numberOfActiveUsers = this.numberOfActiveUsers + 1;
+          } else {
+            this.numberOfInactiveUsers = this.numberOfInactiveUsers + 1;
+          }
+          this.numberOfAppleFans = user.favoriteFruit === 'apple'
+            ? this.numberOfAppleFans + 1
+            : this.numberOfAppleFans;
+          if (user.balance) {
+            const currBalance = parseFloat(user.balance.replace('$', '').replace(',', ''));
+            this.sumBalance = this.sumBalance + currBalance;
+          }
+        });
       }
     )
   }
