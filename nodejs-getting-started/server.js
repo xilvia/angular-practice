@@ -15,7 +15,7 @@ class PostHandler {
 
         // Megjött az összes adat.
         req.on('end', () => {
-            console.log( this.allData );
+            console.log(this.allData);
             res.end('Köszi.');
         });
     }
@@ -23,8 +23,10 @@ class PostHandler {
 
 class GetHandler {
     constructor(req, res) {
-        let fileName = req.url == '/' ? 'index.html' : `${req.url}.html`;
+        let fileName = req.url == '/' ? '/index.html' : `${req.url}.html`;
         let filePath = `./view${fileName}`;
+        // mindig teljes elérési utat kell megadni. Ponttal kezdeni okos dolog,
+        // akkor teljes lesz
 
         console.time('filereadtime');
         console.time('testtime');
@@ -44,14 +46,15 @@ class GetHandler {
 
 
 // Init server.
-const server = http.createServer( (req, res) => {
+const server = http.createServer((req, res) => {
+    // ezt a függvényt indítja el a node js
 
-    switch( req.method.toLowerCase() ) {
+    switch (req.method.toLowerCase()) {
         // get|post|put|delete
         case 'get': new GetHandler(req, res);
-        break;
+            break;
         case 'post': new PostHandler(req, res);
-        break;
+            break;
         default:
             res.end('Hello');
     }
@@ -59,5 +62,5 @@ const server = http.createServer( (req, res) => {
 
 // Set server port.
 server.listen(port, () => {
-    console.log( `Server is listening in ${port} port.`);
+    console.log(`Server is listening in ${port} port.`);
 });
