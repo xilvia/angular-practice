@@ -15,6 +15,7 @@ import { NavComponent } from './app/nav/nav.component';
 import { UserService } from './service/user.service';
 import { FilterPipe } from './pipe/filter.pipe';
 import { SorterPipe } from './pipe/sorter.pipe';
+import { AboutComponent } from './app/page/about/about.component';
 
 
 const appRoutes: Routes = [
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     AddUserComponent,
     NavComponent,
     FilterPipe,
-    SorterPipe
+    SorterPipe,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

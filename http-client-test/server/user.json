@@ -227,10 +227,10 @@
     {
       "id": 6,
       "guid": "8c4540e5-9125-4c06-8204-f7464832a002",
-      "isActive": true,
+      "isActive": "false",
       "balance": "$2,898.34",
       "picture": "http://placehold.it/32x32",
-      "age": 22,
+      "age": "28",
       "eyeColor": "brown",
       "name": {
         "first": "Boyle",

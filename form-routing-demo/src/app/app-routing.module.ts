@@ -29,7 +29,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-<<<<<<< HEAD
-
-=======
->>>>>>> 14608995eb2f047106f52941e090f98cf6a44cba

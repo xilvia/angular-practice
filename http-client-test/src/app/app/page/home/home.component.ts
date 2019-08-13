@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
           }
           this.numberOfAllUsers = this.numberOfActiveUsers + this.numberOfInactiveUsers;
 
-          this.numberOfAppleFans = user.favoriteFruit === 'apple'
-            ? this.numberOfAppleFans + 1
+          this.numberOfAppleFans = user.favoriteFruit === 'apple' ?
+            this.numberOfAppleFans + 1
             : this.numberOfAppleFans;
           if (user.balance) {
             const currBalance = parseFloat(user.balance.replace('$', '').replace(',', ''));
