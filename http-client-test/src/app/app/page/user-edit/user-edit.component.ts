@@ -22,11 +22,7 @@ export class UserEditComponent implements OnInit {
     private ar: ActivatedRoute,
   ) {
 
-    this.ar.params.subscribe(params => {
-      this.userService.getOne(params.id).subscribe(user => {
-        this.user = user
-      })
-    })
+
 
   }
 
@@ -34,6 +30,13 @@ export class UserEditComponent implements OnInit {
     this.userSubscription = this.userService.getAll().subscribe(
       users => this.userList = users
     )
+    // this.ar.params.subscribe(params => {
+    //   this.userService.getOne(params.id).subscribe(user => {
+    //     this.user = user
+    //   })
+    // })
+    const id = +(this.ar.snapshot.params['id'])
+    this.userService.getOne(id).subscribe(user => { this.user = user })
   }
 
 

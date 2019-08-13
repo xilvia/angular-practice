@@ -16,10 +16,7 @@ export class UserService {
 
   constructor(
     private http: HttpClient
-  ) { this.http.get(this.jsonUrl).subscribe(
-    list => console.log(list)
-
-  ); }
+  ) {}
 
   getAll(): Observable<User[]> {
     return this.http.get<User[]>(this.jsonUrl);

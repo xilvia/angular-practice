@@ -16,7 +16,7 @@ export class UsersComponent implements OnInit {
   orderKey: string = '';
   orderDirection: number = 1;
   changeCounter: number = 0;
-  
+
 
 
 
@@ -35,7 +35,7 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userSubscription = this.userService.getAll().subscribe(
+    this.userService.getAll().subscribe(
       users => this.userList = users
     )
   }

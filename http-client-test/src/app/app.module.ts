@@ -17,11 +17,6 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { SorterPipe } from './pipe/sorter.pipe';
 import { AboutComponent } from './app/page/about/about.component';
 
-
-const appRoutes: Routes = [
-  
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,10 +32,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false }
-    ),
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule

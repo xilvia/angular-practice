@@ -9,6 +9,11 @@ class PostHandler {
         this.allData = '';
 
         // Ez a függvény fut le, ha megérkezik egy adatcsomag.
+        // 1. csomag: {"name": 
+        // 2. csomag: "Pisti",
+        // 3. csomag:  "passw
+        // 4. csomag: ord": 
+        // 5. csomag: "1234"
         req.on('data', (chunk) => {
             this.allData += chunk;
         });
@@ -21,17 +26,18 @@ class PostHandler {
                     return res.end(JSON.stringify(err));
                 }
                 let users = JSON.parse(jsonString);
-                users.push(this.allData);
+                users.push( this.allData );
 
                 fs.writeFile('./json/users.json', JSON.stringify(users, null, 4), 'utf8', (err) => {
                     if (err) {
                         return res.end(JSON.stringify(err));
                     }
                     res.end('Köszi.');
-                })
-            })
-            console.log(this.allData);
+                });
 
+            });
+
+            console.log( this.allData );
         });
     }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [{
     "email": "kapuvari.szilvia@gmail.com",
     "password": "fadfa",
@@ -123,3 +124,47 @@
     "password": "",
     "check": "on"
 }]
+=======
+[
+    {
+        "email": "j.cserko@gmail.com",
+        "password": "1234",
+        "check": "on"
+    },
+    {
+        "email": "j.cserko@gmail.com",
+        "password": "1234",
+        "check": "on"
+    },
+    {
+        "email": "j.cserko@gmail.com",
+        "password": "1234",
+        "check": "on"
+    },
+    {
+        "email": "j.cserko@gmail.com",
+        "password": "1234",
+        "check": "on"
+    },
+    {
+        "email": "j.cserko@gmail.com",
+        "password": "1234",
+        "check": "on"
+    },
+    {
+        "email": "j.cserko@gmail.com",
+        "password": "1234",
+        "check": "on"
+    },
+    {
+        "email": "sdfsdfsdf@jaskldfj.hu",
+        "password": "sdfsdfsd",
+        "check": "checkmeout"
+    },
+    {
+        "email": "sdfsdfsdf@jaskldfj.hu",
+        "password": "sdfsdfsd",
+        "check": "checkmeout"
+    }
+]
+>>>>>>> 827a761430ea9982b79adcca638dbb2eba6b921c

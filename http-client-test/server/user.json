@@ -5433,30 +5433,6 @@
       "favoriteFruit": "apple"
     },
     {
-      "id": 103,
-      "name": {
-        "first": "Kapuvári",
-        "last": "Szilvia"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
-      "id": 104,
-      "name": {
-        "first": "Kapuvári",
-        "last": "Szilvia"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "",
-      "Phone": "205474284"
-    },
-    {
       "id": 105,
       "name": {
         "first": "Kapuvári",
