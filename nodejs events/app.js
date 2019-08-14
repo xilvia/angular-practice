@@ -41,3 +41,8 @@ fs.readFile('./files/test2.txt', 'utf8', (err, data) => {
 });
 
 // az eseményt akárhányszor le tudjuk futtatni ellentétben a promise-szal
+// myEmitter.emit('fileChanged', 'pass.txt', 'kisspista', 'nagypista');
+
+// MyEmitter.on('fileChanged', (fileName, oldCont, newCont) => {
+
+// })

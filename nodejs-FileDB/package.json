@@ -1,0 +1,14 @@
+{
+  "name": "filedb",
+  "version": "0.1.1",
+  "description": "Education app.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xilvia",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
