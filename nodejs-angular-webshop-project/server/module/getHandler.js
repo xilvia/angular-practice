@@ -10,7 +10,7 @@ module.exports = class GetHandler {
         const id = reqParams[2] || 0; // ha adtak meg id-t, akkor az a [2]-es, 
         // ha nem, akkor 0, tehát nincs id.
         const orderDB = new DB(reqParams[1]);
-        orderDB.find(reqParams[2]).then(
+        orderDB.find(id).then(
             data => res.end(JSON.stringify(data)),
             // az Angular itt visszakapja az adatot a szervertől
             // átalakítani a json-t ettől függetlenül nem volt felesleges

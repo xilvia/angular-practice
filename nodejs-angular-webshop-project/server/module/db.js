@@ -31,6 +31,14 @@ module.exports = class DB {
                     // ha itt elkapom a hibát, akkor a getHandler-ben is 
                     // le kell kezelni
                 );
+            }  else {
+                // az else ág akkor fut le, ha nincs id
+                this.getJsonArray().then(
+                    dataArray => {
+                        let found = dataArray.filter(item => item.id == id)[0] || {};
+                        resolve(found);
+                    }
+                )
             }
         });
     }
@@ -45,15 +53,16 @@ module.exports = class DB {
                     return reject(err);
                     // ha az err nem 0, a return miatt nem megy tovább, 
                     // a reject jelzi, hogy nem sikerült a beolvasás
-                } else {
-                    // az else ág akkor fut le, ha nincs id
-                    this.getJsonArray().then(
-                        dataArray => {
-                            let found = dataArray.filter(item => item.id == id)[0] || {};
-                            resolve(found);
-                        }
-                    )
-                }
+                } 
+                // else {
+                //     // az else ág akkor fut le, ha nincs id
+                //     this.getJsonArray().then(
+                //         dataArray => {
+                //             let found = dataArray.filter(item => item.id == id)[0] || {};
+                //             resolve(found);
+                //         }
+                //     )
+                // }
                 resolve(JSON.parse(jsonString));
                 // és parse-olás után végül sima tömb lesz objektummal, amit 
                 // visszaad
