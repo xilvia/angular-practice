@@ -6,7 +6,6 @@
     "userName": "Nagy Piroska",
     "userEmail": "npm@gmail.com",
     "shippingAddress": "Bp, Nagy Kálmán tér 5."
-
   },
   {
     "id": 2,
@@ -16,6 +15,5 @@
     "userName": "Nagy Piroska",
     "userEmail": "npm@gmail.com",
     "shippingAddress": "Bp, Nagy Kálmán tér 5."
-
   }
 ]
