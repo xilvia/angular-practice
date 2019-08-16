@@ -1,0 +1,18 @@
+<pre>{{ list$ | async | json }}</pre>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of list$ | async">
+      <!-- ha megérkezik az adat, mert a list$ tovább van pipe-olva, majd akkor lesz betöltve -->
+    </tr>
+  </tbody>
+</table>
