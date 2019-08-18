@@ -24,8 +24,8 @@ module.exports = class DB {
                     dataArray => resolve(dataArray),
                     // ha nincs id, akkor ebből arra következtetünk, 
                     // hogy a teljes tömb kell, hát azt hívjuk meg
-                    // a dataArray a parse-olt string lesz
-                    // ( ami lentebb resolve(JSON.parse(jsonString))-ként fut, 
+                    // a dataArray a parse-olt string lesz,
+                    // ami lentebb resolve(JSON.parse(jsonString))-ként fut, 
                     // ez meg visszaadja annak, ami őt meghívta
                     err => reject(err)
                     // ha itt elkapom a hibát, akkor a getHandler-ben is 
@@ -54,15 +54,7 @@ module.exports = class DB {
                     // ha az err nem 0, a return miatt nem megy tovább, 
                     // a reject jelzi, hogy nem sikerült a beolvasás
                 } 
-                // else {
-                //     // az else ág akkor fut le, ha nincs id
-                //     this.getJsonArray().then(
-                //         dataArray => {
-                //             let found = dataArray.filter(item => item.id == id)[0] || {};
-                //             resolve(found);
-                //         }
-                //     )
-                // }
+                
                 resolve(JSON.parse(jsonString));
                 // és parse-olás után végül sima tömb lesz objektummal, amit 
                 // visszaad
