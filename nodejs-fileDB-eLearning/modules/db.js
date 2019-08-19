@@ -11,8 +11,8 @@ const find = (table, options) => { // egy táblát és egy tulajdonságot vár
     return new Promise((resolve, reject) => {
         // a promise-ban indítjuk el a fájl beolvasását
         fs.readFile(tablePath)
-        // ha beolvastuk, megvannak az adatok, de objektummá kell
-        // alakítani
+            // ha beolvastuk, megvannak az adatok, de objektummá kell
+            // alakítani
             .then((data) => {
                 data = JSON.parse(data);
                 if (Object.keys(options).length > 0) {
@@ -54,11 +54,11 @@ const filter = (table, options) => { // az options alapján fogja megvizsgálni
             }
         }
     }
-    // végigmegy az objektumokon, és megnézi, hogy adott kulcsú elemnek 
+    // végigmegy  a ciklus az objektumokon, és megnézi, hogy adott kulcsú elemnek 
     // az-e az értéke, amit options-ként kapott, ha igen, beteszi az 
     // result tömbbe, ha nincs ilyen, üres tömböt ad vissza
     return result;
-}
+};
 
 module.exports = {
     find: find,

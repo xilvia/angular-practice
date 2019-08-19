@@ -28,10 +28,14 @@ const render = (name, vars = {}) => { // a fájl neve, amit renderelni
 
 // Include variables.
 const includeVars = (html, vars) => {
-    // ha üres a vars objektum, akkor ez egyszer sem fog lefutni
+    // ha üres a vars objektum, akkor a for magja egyszer sem fog lefutni
     // ha van, lefut a for ciklus a vars kulcsain
     for (var k in vars) {
         let reg = new RegExp("\\$\\{[]*" + k + "[]*(\\}){1}", 'g');
+        // szövegen belül nem lehet kapcsos zárójel, lezáró kapcsos zárójelből
+        // csak egy darab lehet {1}, 
+        // lecseréli a ${title}-t a változóra a regexp-pel az index.html-ben
+        // így tud megjelenni a title, ami a yellowRoad students
         html = html.replace(reg, vars[k]); // a reget vars k-ra cserélem
     }
 
