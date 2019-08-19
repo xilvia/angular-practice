@@ -1,8 +1,41 @@
 [{
-  "id": 1,
-  "name": "Emeletes ágy",
-  "insdate": "2019-08-16",
-  "description": "Emeletes ágy, akár két gyereknek.",
-  "color": "red"
+    "id": 1,
+    "name": "Emeletes ágy",
+    "insdate": "2019-08-16",
+    "description": "Emeletes ágy, akár két gyereknek.",
+    "color": "red"
 
-}]
+  },
+  {
+    "id": 2,
+    "name": "Asztal",
+    "insdate": "2019-08-16",
+    "description": "Étkezőasztal.",
+    "color": "red"
+
+  },
+  {
+    "id": 3,
+    "name": "Szék",
+    "insdate": "2019-08-16",
+    "description": "Karosszék, kényelmes.",
+    "color": "red"
+
+  },
+  {
+    "id": 4,
+    "name": "Hintaszék",
+    "insdate": "2019-08-16",
+    "description": "Ringasd el magad.",
+    "color": "red"
+
+  },
+  {
+    "id": 5,
+    "name": "Kanapé",
+    "insdate": "2019-08-16",
+    "description": "Ágyneműtartós, kinyitható. Kétszemélyes.",
+    "color": "red"
+
+  }
+]
