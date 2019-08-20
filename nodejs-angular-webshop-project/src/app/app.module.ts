@@ -12,6 +12,8 @@ import { ProductsComponent } from './page/products/products.component';
 import { ProductsDetailsComponent } from './page/products-details/products-details.component';
 import { OrderService } from '../app/service/order.service';
 import { ProductService } from '../app/service/product.service';
+import { NavComponent } from '../app/nav/nav.component';
+import { AdminComponent } from './page/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,15 @@ import { ProductService } from '../app/service/product.service';
     ProductAdminComponent,
     ProductAdminEditComponent,
     ProductsComponent,
-    ProductsDetailsComponent
+    ProductsDetailsComponent,
+    NavComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [OrderService,
     ProductService],

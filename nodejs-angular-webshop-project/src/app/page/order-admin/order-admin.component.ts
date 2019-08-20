@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OrderService } from 'src/app/service/order.service';
 import { Order } from 'src/app/model/order';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-admin',
@@ -10,12 +11,28 @@ import { Order } from 'src/app/model/order';
 })
 export class OrderAdminComponent implements OnInit {
 
+  orderKey: string = '';
+  orderDirection: number = 1;
+
   list: Order[] = [];
   list$: Observable<any> = this.orderService.getAll();
   //$ - ez nem adat, hanem egy observable, ami az adatot körülveszi
   constructor(
-    private orderService: OrderService
+    private orderService: OrderService,
+    private ar: ActivatedRoute,
+    private router: Router
+
   ) { }
+
+  // setSorterKey(key: string): void {
+  //   if (key === this.orderKey) {
+  //     this.orderDirection = this.orderDirection === -1 ? 1 : -1;
+  //   } else {
+  //     this.orderDirection = 1;
+  //   }
+
+  //   this.orderKey = key;
+  // }
 
   ngOnInit() {
     // this.orderService.getAll().subscribe(

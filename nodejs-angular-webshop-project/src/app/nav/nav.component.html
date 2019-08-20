@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
+
+  <div class="collapse navbar-collapse"
+       id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active"
+           routerLink="/"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}">index</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/product-admin"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}">Product Admin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/order-admin"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}">Order Admin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/products"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+           routerLink="/products/:id"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}">Product Details</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>

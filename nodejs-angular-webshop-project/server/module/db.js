@@ -4,11 +4,13 @@ const path = require('path');
 const fs = require('fs'); // olvasáshoz 
 // modul egy osztállyal tér vissza, ami az adatbázis fájlokat kezeli
 
+
 module.exports = class DB {
     // konstruktor megkapja az adott json fájl nevét, pl. product
     constructor(jsonFileName) {
         // beállítjuk a json fájlokat tartalmazó mappa elérési útját
-        this.jsonDirectory = path.join('./../json');
+        // dirname - projektmappából is indítható a szerver
+        this.jsonDirectory = path.join(__dirname, '../../json');
         // beállítjuk a kezelendő json fájl teljes elérési útját
         this.jsonFilePath = path.join(
             this.jsonDirectory,
@@ -62,6 +64,34 @@ module.exports = class DB {
             })
         })
 
+    };
+
+    writeJsonFile() {
+        let newObjectToJson = {};
+        return new Promise((resolve, reject) => {
+            fs.writeFile(this.jsonFilePath, this.newObjectToJson, 'utf8', (err) => {
+                if (err) {
+                    return console.error(err)
+                }
+                console.log('file succesfully written')
+            })
+
+            let fileSettings = {
+                encoding: "utf8",
+                flag: 'a+'
+            };
+        });
+
+        // fs.writeFileSync(this.jsonFilePath, newObjectToJson, fileSettings);
     }
 
+    getNewId = (array) => {
+        if (array.length > 0) {
+            return array[array.length - 1].id + 1
+        } else {
+            return 1
+        }
+    };
+
+    newDate = () => new Date().toString();
 };

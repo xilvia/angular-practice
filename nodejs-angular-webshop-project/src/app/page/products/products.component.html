@@ -1,1 +1,27 @@
-<p>products works!</p>
+<table>
+  <thead>
+    <tr>
+      <th (click)="setSorterKey('id')">ID</th>
+      <th (click)="setSorterKey('name')">Name</th>
+      <th (click)="setSorterKey('type')">Type</th>
+      <th (click)="setSorterKey('insdate')">Insdate</th>
+      <th (click)="setSorterKey('picture')">Picture</th>
+      <th (click)="setSorterKey('description')">Description</th>
+      <th (click)="setSorterKey('color')">Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of pList">
+      <!-- ha megérkezik az adat, mert a list$ tovább van pipe-olva, majd akkor lesz betöltve -->
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.type }}</td>
+      <td>{{ product.insdate }}</td>
+      <td>{{ product.picture }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.color }}</td>
+      <td> <button class="btn btn-info">Details</button></td>
+      <td><button class="btn btn-danger">Order</button></td>
+    </tr>
+  </tbody>
+</table>

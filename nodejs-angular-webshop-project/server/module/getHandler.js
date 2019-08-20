@@ -1,5 +1,5 @@
 const DB = require('./db'); // a "./"-ből tudja, hogy ne gyári modult keressen
-
+// const url = require('url');
 module.exports = class GetHandler {
     constructor(req, res) {
         const reqParams = req.url.split('/');

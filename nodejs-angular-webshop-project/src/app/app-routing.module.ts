@@ -11,10 +11,10 @@ import { OrderAdminEditComponent } from './page/order-admin-edit/order-admin-edi
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
-  { path: 'admin/order', component: OrderAdminComponent },
-  { path: 'admin/order/:id', component: OrderAdminEditComponent },
-  { path: 'admin/product', component: ProductAdminComponent },
-  { path: 'admin/product/:id', component: ProductAdminEditComponent },
+  { path: 'order-admin', component: OrderAdminComponent },
+  { path: 'order/:id', component: OrderAdminEditComponent },
+  { path: 'product-admin', component: ProductAdminComponent },
+  { path: 'product/:id', component: ProductAdminEditComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductsDetailsComponent },
   { path: '**', component: IndexComponent },

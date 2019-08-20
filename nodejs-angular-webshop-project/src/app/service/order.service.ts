@@ -16,6 +16,8 @@ export class OrderService {
 
   getAll(): Observable<any> {
     return this.http.get(this.apiUrl);
+    // getAll(): Observable<Order[]> {
+    //   return this.http.get<Order[]>(this.apiUrlP);
 
     // return new Observable(observer => {
     //   observer.next(this.orders);

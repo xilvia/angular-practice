@@ -1,20 +1,30 @@
-<pre>{{ list$ | async | json }}</pre>
+<!-- <pre>{{ list$ | async | json }}</pre> -->
 
 <table>
+  <td><button class="btn btn-danger">Add</button></td>
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th (click)="setSorterKey('id')">ID</th>
+      <th (click)="setSorterKey('product')">Product</th>
+      <th (click)="setSorterKey('insdate')">Insdate</th>
+      <th (click)="setSorterKey('quantity')">Quantity</th>
+      <th (click)="setSorterKey('userName')">Username</th>
+      <th (click)="setSorterKey('userEmail')">User e-mail</th>
+      <th (click)="setSorterKey('shippingAddress')">Shipping Address</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let order of list$ | async">
       <!-- ha megérkezik az adat, mert a list$ tovább van pipe-olva, majd akkor lesz betöltve -->
+      <td>{{ order.id }}</td>
+      <td>{{ order.product }}</td>
+      <td>{{ order.insdate }}</td>
+      <td>{{ order.quantity }}</td>
+      <td>{{ order.userName }}</td>
+      <td>{{ order.userEmail }}</td>
+      <td>{{ order.shippingAddress }}</td>
+      <td> <button class="btn btn-info">Edit</button></td>
+      <td><button class="btn btn-danger">Delete</button></td>
     </tr>
   </tbody>
 </table>
-
-
