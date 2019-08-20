@@ -10,6 +10,8 @@ import { ProductAdminComponent } from './page/product-admin/product-admin.compon
 import { ProductAdminEditComponent } from './page/product-admin-edit/product-admin-edit.component';
 import { ProductsComponent } from './page/products/products.component';
 import { ProductsDetailsComponent } from './page/products-details/products-details.component';
+import { OrderService } from '../app/service/order.service';
+import { ProductService } from '../app/service/product.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ProductsDetailsComponent } from './page/products-details/products-detai
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [OrderService,
+    ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

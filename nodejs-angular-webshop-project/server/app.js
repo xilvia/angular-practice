@@ -2,6 +2,10 @@ const http = require('http');
 const path = require('path');
 const port = 3210;
 const GetHandler = require('./module/getHandler');
+// const PostHandler = require('./module/postHandler');
+// const PutHandler = require('./module/putHandler');
+// const DeleteHandler = require('./module/deleteHandler');
+
 
 const server = http.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -11,6 +15,12 @@ const server = http.createServer((req, res) => {
             // minden a GetHandler osztályban történik ezentúl
             // másik 3 metódusnál ue. lesz
             break;
+        // case 'post': new PostHandler(req, res);
+        //     break;
+        // case 'put': new PutHandler(req, res);
+        //     break;
+        // case 'delete': new DeleteHandler(req, res);
+        //     break;
         default: res.end('Invalid method');
     }
 });

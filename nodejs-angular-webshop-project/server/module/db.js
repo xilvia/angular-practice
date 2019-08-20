@@ -3,6 +3,7 @@
 const path = require('path');
 const fs = require('fs'); // olvasáshoz 
 // modul egy osztállyal tér vissza, ami az adatbázis fájlokat kezeli
+
 module.exports = class DB {
     // konstruktor megkapja az adott json fájl nevét, pl. product
     constructor(jsonFileName) {
@@ -31,7 +32,7 @@ module.exports = class DB {
                     // ha itt elkapom a hibát, akkor a getHandler-ben is 
                     // le kell kezelni
                 );
-            }  else {
+            } else {
                 // az else ág akkor fut le, ha nincs id
                 this.getJsonArray().then(
                     dataArray => {
@@ -53,8 +54,8 @@ module.exports = class DB {
                     return reject(err);
                     // ha az err nem 0, a return miatt nem megy tovább, 
                     // a reject jelzi, hogy nem sikerült a beolvasás
-                } 
-                
+                }
+
                 resolve(JSON.parse(jsonString));
                 // és parse-olás után végül sima tömb lesz objektummal, amit 
                 // visszaad

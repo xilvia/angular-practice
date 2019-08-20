@@ -1,1 +1,72 @@
 <p>product-admin works!</p>
+
+<pre>{{ pList$ | async | json }}</pre>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of pList$ | async">
+      <!-- ha megérkezik az adat, mert a list$ tovább van pipe-olva, majd akkor lesz betöltve -->
+    </tr>
+  </tbody>
+</table>
+
+<!-- <div class="container-fluid">
+    <div class="row">
+      <div class="col-10 offset-1">
+        <h2>{{ title }}</h2> -->
+        <!-- <router-outlet></router-outlet> -->
+      <!-- </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <input [(ngModel)]="filterPhrase"
+               type="text"
+               class="form-control"
+               placeholder="Search...">
+      </div>
+    </div>
+    <span> &nbsp;</span>
+    <div><button class="btn-block btn-primary"
+              (click)="routeToAdd()">Add new user</button></div>
+    <div class="row">
+      <div class="col-10 offset-1">
+        <table class="table">
+          <thead>
+            <tr>
+              <th (click)="setSorterKey('id')">#</th>
+              <th (click)="setSorterKey('name')">Name</th>
+              <th (click)="setSorterKey('isActive')">Active</th>
+              <th (click)="setSorterKey('age')">Age</th>
+              <th (click)="setSorterKey('email')">Email</th>
+              <th (click)="setSorterKey('phone')">Phone</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr
+                *ngFor="let user of userList | filter:filterPhrase:changeCounter | sorter:orderKey:orderDirection:changeCounter">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name.first }} {{ user.name.last }}</td>
+              <td>{{ user.isActive }}</td>
+              <td>{{ user.age }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.phone }}</td>
+              <td> <button class="btn btn-info"
+                        (click)="routeToEdit(user)">Edit</button></td>
+              <td><button class="btn btn-danger"
+                        (click)="onDelete(user)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div> -->

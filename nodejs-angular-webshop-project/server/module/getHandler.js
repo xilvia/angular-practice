@@ -11,7 +11,8 @@ module.exports = class GetHandler {
         // ha nem, akkor 0, tehát nincs id.
         const orderDB = new DB(reqParams[1]);
 
-        
+
+
         orderDB.find(id).then(
             data => res.end(JSON.stringify(data)),
             // az Angular itt visszakapja az adatot a szervertől
