@@ -22,7 +22,10 @@ export class OrderAdminComponent implements OnInit {
     private ar: ActivatedRoute,
     private router: Router
 
-  ) { }
+  ) {
+  
+
+  }
 
   // setSorterKey(key: string): void {
   //   if (key === this.orderKey) {

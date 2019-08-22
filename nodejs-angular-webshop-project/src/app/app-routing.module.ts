@@ -8,6 +8,8 @@ import { ProductAdminEditComponent } from './page/product-admin-edit/product-adm
 import { ProductAdminComponent } from './page/product-admin/product-admin.component';
 import { OrderAdminEditComponent } from './page/order-admin-edit/order-admin-edit.component';
 import { AdminComponent } from './page/admin/admin.component';
+import { AddOrderAdminComponent } from './page/add-order-admin/add-order-admin.component';
+import { AddProductAdminComponent } from './page/add-product-admin/add-product-admin.component';
 
 
 const routes: Routes = [
@@ -15,8 +17,10 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'order-admin', component: OrderAdminComponent },
   { path: 'order/:id', component: OrderAdminEditComponent },
+  { path: 'add-order-admin', component: AddOrderAdminComponent },
   { path: 'product-admin', component: ProductAdminComponent },
   { path: 'product/:id', component: ProductAdminEditComponent },
+  { path: 'add-product-admin', component: AddProductAdminComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductsDetailsComponent },
   { path: '**', component: IndexComponent },

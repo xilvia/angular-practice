@@ -66,32 +66,28 @@ module.exports = class DB {
 
     };
 
-    writeJsonFile() {
-        let newObjectToJson = {};
-        return new Promise((resolve, reject) => {
-            fs.writeFile(this.jsonFilePath, this.newObjectToJson, 'utf8', (err) => {
-                if (err) {
-                    return console.error(err)
-                }
-                console.log('file succesfully written')
-            })
+    postJsonData(data = {}) {
 
-            let fileSettings = {
-                encoding: "utf8",
-                flag: 'a+'
-            };
+        return new Promise((resolve, reject) => {
+            this.getJsonArray().then(
+                dataArray => {
+                    dataArray.push(data);
+                    data.id = dataArray.length > 0 ? dataArray[dataArray.length - 1].id + 1 : 1;
+                    data.insdate = new Date().toString();
+                    fs.writeFile(this.jsonFilePath, JSON.stringify(data), 'utf8', (err) => {
+                        if (err) {
+                            return console.error(err)
+                        }
+                        console.log('file succesfully written')
+                    })
+                }
+            )
         });
 
         // fs.writeFileSync(this.jsonFilePath, newObjectToJson, fileSettings);
     }
 
-    getNewId = (array) => {
-        if (array.length > 0) {
-            return array[array.length - 1].id + 1
-        } else {
-            return 1
-        }
-    };
 
-    newDate = () => new Date().toString();
+
+
 };

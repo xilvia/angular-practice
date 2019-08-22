@@ -14,6 +14,8 @@ import { OrderService } from '../app/service/order.service';
 import { ProductService } from '../app/service/product.service';
 import { NavComponent } from '../app/nav/nav.component';
 import { AdminComponent } from './page/admin/admin.component';
+import { AddProductAdminComponent } from './page/add-product-admin/add-product-admin.component';
+import { AddOrderAdminComponent } from './page/add-order-admin/add-order-admin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AdminComponent } from './page/admin/admin.component';
     ProductsComponent,
     ProductsDetailsComponent,
     NavComponent,
-    AdminComponent
+    AdminComponent,
+    AddProductAdminComponent,
+    AddOrderAdminComponent
   ],
   imports: [
     BrowserModule,

@@ -23,4 +23,20 @@ export class ProductService {
 
     // amíg nem megy innen http-kérés, addig mock-adatokkal dolgozunk
   }
+
+  getOne(id: number): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrlP}/${id}`);
+  }
+
+  create(product): Observable<Product> {
+    return this.http.post<Product>(this.apiUrlP, product);
+  }
+
+  update(product): Observable<Product> {
+    return this.http.put<Product>(`${this.apiUrlP}/${product.id}`, product);
+  }
+
+  remove(id: number): Observable<Product> {
+    return this.http.delete<Product>(`${this.apiUrlP}/${id}`);
+  }
 }

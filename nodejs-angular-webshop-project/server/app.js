@@ -2,7 +2,7 @@ const http = require('http');
 const path = require('path');
 const port = 3210;
 const GetHandler = require('./module/getHandler');
-// const PostHandler = require('./module/postHandler');
+const PostHandler = require('./module/postHandler');
 // const PutHandler = require('./module/putHandler');
 // const DeleteHandler = require('./module/deleteHandler');
 
