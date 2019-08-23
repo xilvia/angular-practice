@@ -24,8 +24,12 @@
       <td>{{ order.userName }}</td>
       <td>{{ order.userEmail }}</td>
       <td>{{ order.shippingAddress }}</td>
-      <td> <button class="btn btn-info" (click)="routeToEdit(order)">Edit</button></td>
+      <button> <button class="btn btn-info"
+                [routerLink]="['/order-admin', order.id]">Edit</button></button>
       <td><button class="btn btn-danger">Delete</button></td>
     </tr>
   </tbody>
 </table>
+
+<!-- (click)="routeToEdit(order)" -->
+<!-- [routerLink]="['/order-admin-edit', order.id]" -->

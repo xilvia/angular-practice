@@ -24,9 +24,9 @@ export class OrderAdminComponent implements OnInit {
 
   ) {}
 
-  routeToEdit(order: Order) {
-    this.router.navigateByUrl(`/order-admin/${order.id}`)
-  }
+  // routeToEdit(order: Order) {
+  //   this.router.navigateByUrl(`/order-admin/${order.id}`)
+  // }
 
   // setSorterKey(key: string): void {
   //   if (key === this.orderKey) {
@@ -55,7 +55,7 @@ export class OrderAdminComponent implements OnInit {
         response => {
           let index = this.list.indexOf(order);
           this.list.splice(index, 1);
-          this.changeCounter++;
+         
         },
         err => console.error(err)
       )

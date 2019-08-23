@@ -66,50 +66,75 @@ module.exports = class DB {
 
     };
 
+    getUniqueId(dataArr) {
+        let ids = dataArr.map(data => data.id);
+        return Math.max(...ids) + 1;
+    }
+
     postJsonData(data = {}) {
         return new Promise((resolve, reject) => {
             this.getJsonArray().then(
                 dataArray => {
-                    dataArray.push(data);
-                    data.id = dataArray.length > 0 ? dataArray[dataArray.length - 1].id + 1 : 1;
+
+                    data.id = this.getUniqueId(dataArray);
+                    // data.id = dataArray.length > 0 ? dataArray[dataArray.length - 1].id + 1 : 1;
                     data.insdate = new Date().toString();
-                    fs.writeFile(this.jsonFilePath, JSON.stringify(data), 'utf8', (err) => {
+                    dataArray.push(data);
+                    fs.writeFile(this.jsonFilePath, JSON.stringify(dataArray), 'utf8', (err) => {
                         if (err) {
                             return console.error(err)
                         }
                         console.log('file succesfully written')
+                        resolve(data);
                     })
                 }
             )
         });
 
-        // fs.writeFileSync(this.jsonFilePath, newObjectToJson, fileSettings);
+       
     }
 
-    putJsonData(data = {}) {
+    putJsonData(data) {
         return new Promise((resolve, reject) => {
             this.getJsonArray().then(
                 dataArray => {
-                    dataArray.forEach(item => { if (item.id === data.id) { for (let i in item) { item[i] = data[i] } } });
-                    fs.writeFile(this.jsonFilePath, JSON.stringify(data[i]????), 'utf8', (err) => {
+                    let changedIndex = dataArray.findIndex(item => item.id === data.id);
+                    dataArray[changedIndex] = Object.assign({}, data)
+                    // changedIndex egy üres object, amibe a data másolata kerül
+                    if (changedIndex < 0) {
+                        reject("product doesn't exist") // nehogy bekerüljön egy -1-es kulcs
+                    }
+
+                    dataArray.forEach(item => {
+                        if (item.id === data.id) {
+                            for (let i in item) {
+                                item[i] = data[i]
+                            }
+                        }
+                    });
+                    fs.writeFile(this.jsonFilePath, JSON.stringify(dataArray), 'utf8', (err) => {
                         if (err) {
                             return console.error(err)
                         }
                         console.log('file succesfully written')
+                        resolve(data)
                     })
                 }
             )
         });
 
-        // fs.writeFileSync(this.jsonFilePath, newObjectToJson, fileSettings);
     }
 
     deleteJsonData(id) {
         return new Promise((resolve, reject) => {
             this.getJsonArray().then(
                 dataArray => {
-                    dataArray.forEach(item => item.id === id)? dataArray.splice(item, 1) : -1;
-                    fs.writeFile(this.jsonFilePath, JSON.stringify(dataArray????), 'utf8', (err) => {
+
+                    const index = dataArray.findIndex(item => item.id === id);
+                    dataArray.splice(index, 1);
+
+
+                    fs.writeFile(this.jsonFilePath, JSON.stringify(dataArray), 'utf8', (err) => {
                         if (err) {
                             return console.error(err)
                         }
@@ -119,7 +144,7 @@ module.exports = class DB {
             )
         });
 
-        // fs.writeFileSync(this.jsonFilePath, newObjectToJson, fileSettings);
+    
     }
 
 

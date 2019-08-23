@@ -21,9 +21,9 @@ export class ProductAdminComponent implements OnInit {
 
   ) { }
 
-  routeToEdit(product: Product) {
-    this.router.navigateByUrl(`/product-admin/${product.id}`)
-  }
+  // routeToEdit(product: Product) {
+  //   this.router.navigateByUrl(`/product-admin/${product.id}`)
+  // }
 
   ngOnInit() {
     // this.productService.getAll().subscribe(
@@ -35,4 +35,15 @@ export class ProductAdminComponent implements OnInit {
       err => console.error(err)
   }
 
+  onDelete(product: Product) {
+    if (confirm(`Are you sure to delete ${product.id}?`))
+      this.productService.remove(product.id).subscribe(
+        response => {
+          let index = this.pList.indexOf(product);
+          this.pList.splice(index, 1);
+         
+        },
+        err => console.error(err)
+      )
+  }
 }

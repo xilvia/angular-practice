@@ -23,7 +23,7 @@
       <td>{{ product.picture }}</td>
       <td>{{ product.description }}</td>
       <td>{{ product.color }}</td>
-      <td> <button class="btn btn-info" (click)="routeToEdit(product)">Edit</button></td>
+      <td> <button class="btn btn-info" [routerLink]="['/product-admin', product.id]">Edit</button></td>
       <td><button class="btn btn-danger">Delete</button></td>
     </tr>
   </tbody>

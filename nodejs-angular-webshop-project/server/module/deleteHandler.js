@@ -5,11 +5,10 @@ module.exports = class DeleteHandler {
     constructor(req, res) {
 
 
-        // const reqParams = req.url.split('/');
+        const reqParams = req.url.split('/');
         const id = reqParams[2]
-        const ordersDB = new DB();
+        const opDB = new DB(id);
 
-       // ordersDB.postJsonData(jsonData);
 
         response.on('error', (err) => {
             console.error(err);

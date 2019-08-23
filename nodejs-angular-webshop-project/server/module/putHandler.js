@@ -14,12 +14,13 @@ module.exports = class PutHandler {
         }).on('end', () => {
             body = Buffer.concat(body);
 
-            // const reqParams = req.url.split('/');
+            const reqParams = req.url.split('/');
 
-            const ordersDB = new DB();
+            const opDB = new DB(reqParams[1]);
+
 
             const jsonData = JSON.parse(body);
-            //    ordersDB.postJsonData(jsonData);
+            ordersDB.postJsonData(jsonData);
 
             response.on('error', (err) => {
                 console.error(err);
