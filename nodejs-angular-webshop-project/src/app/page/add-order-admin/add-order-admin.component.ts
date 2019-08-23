@@ -11,7 +11,7 @@ import { Order } from 'src/app/model/order';
 })
 export class AddOrderAdminComponent implements OnInit {
 
-  order: Order = new Order;
+  order: Order = new Order();
 
   constructor(
     private orderService: OrderService,
@@ -20,7 +20,7 @@ export class AddOrderAdminComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   onSubmit(ev: Event): void {
     ev.preventDefault();
     this.orderService.create(this.order).subscribe(

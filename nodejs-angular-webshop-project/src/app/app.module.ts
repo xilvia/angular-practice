@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './page/index/index.component';
 import { OrderAdminComponent } from './page/order-admin/order-admin.component';
@@ -36,7 +37,8 @@ import { AddOrderAdminComponent } from './page/add-order-admin/add-order-admin.c
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [OrderService,
     ProductService],

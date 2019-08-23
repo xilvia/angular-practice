@@ -67,7 +67,6 @@ module.exports = class DB {
     };
 
     postJsonData(data = {}) {
-
         return new Promise((resolve, reject) => {
             this.getJsonArray().then(
                 dataArray => {
@@ -87,6 +86,41 @@ module.exports = class DB {
         // fs.writeFileSync(this.jsonFilePath, newObjectToJson, fileSettings);
     }
 
+    putJsonData(data = {}) {
+        return new Promise((resolve, reject) => {
+            this.getJsonArray().then(
+                dataArray => {
+                    dataArray.forEach(item => { if (item.id === data.id) { for (let i in item) { item[i] = data[i] } } });
+                    fs.writeFile(this.jsonFilePath, JSON.stringify(data[i]????), 'utf8', (err) => {
+                        if (err) {
+                            return console.error(err)
+                        }
+                        console.log('file succesfully written')
+                    })
+                }
+            )
+        });
+
+        // fs.writeFileSync(this.jsonFilePath, newObjectToJson, fileSettings);
+    }
+
+    deleteJsonData(id) {
+        return new Promise((resolve, reject) => {
+            this.getJsonArray().then(
+                dataArray => {
+                    dataArray.forEach(item => item.id === id)? dataArray.splice(item, 1) : -1;
+                    fs.writeFile(this.jsonFilePath, JSON.stringify(dataArray????), 'utf8', (err) => {
+                        if (err) {
+                            return console.error(err)
+                        }
+                        console.log('item succesfully deleted')
+                    })
+                }
+            )
+        });
+
+        // fs.writeFileSync(this.jsonFilePath, newObjectToJson, fileSettings);
+    }
 
 
 

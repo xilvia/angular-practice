@@ -14,7 +14,7 @@ export class OrderAdminComponent implements OnInit {
   orderKey: string = '';
   orderDirection: number = 1;
 
-  list: Order[] = [];
+  list: Order[];
   list$: Observable<any> = this.orderService.getAll();
   //$ - ez nem adat, hanem egy observable, ami az adatot körülveszi
   constructor(
@@ -22,9 +22,10 @@ export class OrderAdminComponent implements OnInit {
     private ar: ActivatedRoute,
     private router: Router
 
-  ) {
-  
+  ) {}
 
+  routeToEdit(order: Order) {
+    this.router.navigateByUrl(`/order-admin/${order.id}`)
   }
 
   // setSorterKey(key: string): void {
@@ -47,6 +48,17 @@ export class OrderAdminComponent implements OnInit {
     //) - ami itt le volt írva, kiváltható ezzel: list$: Observable<any> = this.orderService.getAll(); 
     // a html-ben: {{ list$ | async | json }} ---> az egész a subscribe-ot váltja ki
 
+  }
+  onDelete(order: Order) {
+    if (confirm(`Are you sure to delete ${order.id}?`))
+      this.orderService.remove(order.id).subscribe(
+        response => {
+          let index = this.list.indexOf(order);
+          this.list.splice(index, 1);
+          this.changeCounter++;
+        },
+        err => console.error(err)
+      )
   }
 
 }

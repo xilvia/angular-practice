@@ -15,6 +15,8 @@ module.exports = class PostHandler {
         }).on('end', () => {
             body = Buffer.concat(body);
 
+           // const reqParams = req.url.split('/');
+
             const ordersDB = new DB();
 
             const jsonData = JSON.parse(body);

@@ -1,7 +1,7 @@
 <!-- <pre>{{ pList$ | async | json }}</pre> -->
 
 <table>
-  <td><button class="btn btn-danger">Add</button></td>
+  <td><button class="btn btn-danger" routerLink="/add-product-admin">Add</button></td>
   <thead>
     <tr>
         <th (click)="setSorterKey('id')">ID</th>
@@ -23,12 +23,13 @@
       <td>{{ product.picture }}</td>
       <td>{{ product.description }}</td>
       <td>{{ product.color }}</td>
-      <td> <button class="btn btn-info">Edit</button></td>
+      <td> <button class="btn btn-info" (click)="routeToEdit(product)">Edit</button></td>
       <td><button class="btn btn-danger">Delete</button></td>
     </tr>
   </tbody>
 </table>
-
+<!-- (click)="routeToEdit(product)" -->
+<!-- routerLink="product-admin-edit" -->
 <!-- <div class="container-fluid">
     <div class="row">
       <div class="col-10 offset-1">

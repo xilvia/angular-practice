@@ -1,1 +1,35 @@
-<p>products-details works!</p>
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Insdate</th>
+        <th>Picture</th>
+        <th>Description</th>
+        <th>Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <!-- ha megérkezik az adat, mert a list$ tovább van pipe-olva, majd akkor lesz betöltve -->
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.type }}</td>
+        <td>{{ product.insdate }}</td>
+        <td>{{ product.picture }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.color }}</td>
+
+        
+        <td><button class="btn btn-danger">Order</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <ul>
+    <li>Recently added product: {{}}</li>
+</ul>
+<h3>Cart</h3>
+<ul>
+    <li>*ngFor="#item of cart" {{item}}</li>
+</ul> -->

@@ -20,7 +20,7 @@
       <td>{{ product.picture }}</td>
       <td>{{ product.description }}</td>
       <td>{{ product.color }}</td>
-      <td> <button class="btn btn-info">Details</button></td>
+      <td> <button class="btn btn-info" (click)="routeToDetails(product)">Details</button></td>
       <td><button class="btn btn-danger">Order</button></td>
     </tr>
   </tbody>

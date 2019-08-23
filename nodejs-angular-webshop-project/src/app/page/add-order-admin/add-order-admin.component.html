@@ -1,1 +1,46 @@
-<p>add-order-admin works!</p>
+<h2>Add new Order</h2>
+
+
+<form (submit)="onSubmit($event)"
+      action="">
+  <div class="form-group">
+    <label for="product">Product</label>
+    <input name="product"
+           class="form-control"
+           type="text"
+           [(ngModel)]="order.product">
+  </div>
+  <div class="form-group">
+    <label for="userName">Username</label>
+    <input name="userName"
+           class="form-control"
+           type="text"
+           [(ngModel)]="order.userName">
+  </div>
+  <div class="form-group">
+    <label for="userEmail">User Email</label>
+    <input name="userEmail"
+           type="text"
+           class="form-control"
+           [(ngModel)]="order.userEmail">
+  </div>
+  <div class="form-group">
+    <label for="shippingAddress">Shipping Address</label>
+    <input name="shippingAddress"
+           type="text"
+           class="form-control"
+           [(ngModel)]="order.shippingAddress">
+  </div>
+  <div class="form-group">
+    <label for="quantity">Quantity</label>
+    <input name="quantity"
+           class="form-control"
+           [(ngModel)]="order.quantity"
+           type="text">
+  </div>
+
+  <button class="btn btn-primary">
+    Add
+  </button>
+
+</form>

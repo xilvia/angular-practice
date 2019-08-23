@@ -21,9 +21,13 @@ export class ProductAdminComponent implements OnInit {
 
   ) { }
 
+  routeToEdit(product: Product) {
+    this.router.navigateByUrl(`/product-admin/${product.id}`)
+  }
+
   ngOnInit() {
     // this.productService.getAll().subscribe(
-    //   productAdmin => this.pList = productAdmin
+      // productAdmin => this.pList = productAdmin
     // )
     this.productService.getAll().subscribe(
       productAdminList => this.pList = productAdminList
