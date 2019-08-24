@@ -2,44 +2,46 @@
   <!-- *ngIf="product" -->
   <div><img src="{{ product.picture }}"></div>
   <table>
-   
-     
-        <!-- <th>ID</th> -->
-      <!-- <td>Name</td>
+
+
+    <!-- <th>ID</th> -->
+    <!-- <td>Name</td>
       <td>Type</td> -->
-      <!-- <td>Insdate</td> -->
-      <!-- <td>Picture</td>
+    <!-- <td>Insdate</td> -->
+    <!-- <td>Picture</td>
       <td>Description</td>
       <td>Color</td>
        -->
-    
+
     <tbody>
 
       <tr>
-          <td>Name</td>
-          <td>{{ product.name }}</td>
+        <td>Name</td>
+        <td>{{ product.name }}</td>
       </tr>
       <tr>
-          <td>Type</td>
-          <td>{{ product.type }}</td>
+        <td>Type</td>
+        <td>{{ product.type }}</td>
       </tr>
       <tr>
         <td></td>
-        <td><img src="{{ product.picture }}"width="50"></td>
+        <td><img src="{{ product.picture }}"
+               width="50"></td>
       </tr>
       <tr>
-          <td>Description</td>
-          <td>{{ product.description }}</td>
+        <td>Description</td>
+        <td>{{ product.description }}</td>
       </tr>
       <tr>
-          <td>Color</td>
-          <td>{{ product.color }}</td>
+        <td>Color</td>
+        <td>{{ product.color }}</td>
       </tr>
       <tr>
-          <td>Price</td>
-          <td>{{ product.price }}</td>
+        <td>Price</td>
+        <td>{{ product.price }}</td>
       </tr>
-      <td><button class="btn btn-danger" (click)="addToCart(id)">Add to Cart</button></td>
+      <td><button class="btn btn-danger"
+                (click)="addToCart(id)">Add to Cart</button></td>
       <td><button class="btn btn-danger">Order</button></td>
 
     </tbody>
@@ -48,34 +50,48 @@
 <div class="container">
   <div class="row">
     <div class="col">
-   
+
       <div class="cartDiv">
-      <table>
+        <table>
           <tr>
-              <td>Name</td><td>{{ product.name }}</td>
-          </tr>
-          <tr>
-              <td>Type</td><td>{{ product.type }}</td>
-          </tr>
-          
-          <tr><td></td><td><img src="{{ product.picture }}"width="50"></td></tr>
-          <tr>
-              <td>Description</td><td>{{ product.description }}</td>
+            <td>Name</td>
+            <td>{{ product.name }}</td>
           </tr>
           <tr>
-              <td>Color</td><td>{{ product.color }}</td>
+            <td>Type</td>
+            <td>{{ product.type }}</td>
           </tr>
-          <tr><td>Price</td><td>{{ product.price }}</td>
+
+          <tr>
+            <td></td>
+            <td><img src="{{ product.picture }}"
+                   width="50"></td>
           </tr>
-        
-        <tr><td>Items</td><td>{{ counter }}</td>
-          <tr><td>Total</td><td>{{ total }}</td>
-            <td>{{ cart.selectedObject.name }}</td>
-        </tr>
-        
-      </table>
-      {{ cart }}
-    </div>
+          <tr>
+            <td>Description</td>
+            <td>{{ product.description }}</td>
+          </tr>
+          <tr>
+            <td>Color</td>
+            <td>{{ product.color }}</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>{{ product.price }}</td>
+          </tr>
+
+          <tr>
+            <td>Items</td>
+            <td>{{ counter }}</td>
+          <tr>
+            <td>Total</td>
+            <td>{{ total }}</td>
+
+          </tr>
+
+        </table>
+
+      </div>
     </div>
   </div>
 </div>
