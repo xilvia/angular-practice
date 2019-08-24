@@ -96,5 +96,45 @@
   </div>
 </div>
 
-<!-- <td>Total</td>
-<td>{{total}}</td> -->
+
+
+<div *ngIf="">
+  <form (submit)="onSubmit($event)"
+        action="">
+    <div class="form-group">
+      <label for="product">Product</label>
+      <input name="product"
+             class="form-control"
+             type="text">
+    </div>
+    <div class="form-group">
+      <label for="userName">Username</label>
+      <input name="userName"
+             class="form-control"
+             type="text">
+    </div>
+    <div class="form-group">
+      <label for="userEmail">User Email</label>
+      <input name="userEmail"
+             type="text"
+             class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="shippingAddress">Shipping Address</label>
+      <input name="shippingAddress"
+             type="text"
+             class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input name="quantity"
+             class="form-control"
+             type="text">
+    </div>
+
+    <button class="btn btn-primary">
+      Save
+    </button>
+
+  </form>
+</div>
