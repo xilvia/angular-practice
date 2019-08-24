@@ -40,23 +40,5 @@ export class ProductService {
     return this.http.delete<Product>(`${this.apiUrlP}/${id}`);
   }
 
-  // findAll(): Product[] {
-  //   return this.pList;
-  // }
-
-  // find(id: number): Product {
-  //   return this.product.getSelectedIndex(id);
-  // }
-
-  // private getSelectedIndex(id: number) {
-  //   for (let k in this.pList) {
-  //     this.pList[k].id === id? k :-1;
-  //   }
-    // for (var i = 0; i < this.pList.length; i++) {
-    //   if (this.pList[i].id == id) {
-    //     return i;
-    //   }
-    // }
-    // return -1;
- // }
+  
 }

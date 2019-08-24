@@ -1,16 +1,18 @@
 <!-- <pre>{{ pList$ | async | json }}</pre> -->
 
 <table>
-  <td><button class="btn btn-danger" routerLink="/add-product-admin">Add</button></td>
+  <td><button class="btn btn-danger"
+            routerLink="/add-product-admin">Add</button></td>
   <thead>
     <tr>
-        <th (click)="setSorterKey('id')">ID</th>
-        <th (click)="setSorterKey('name')">Name</th>
-        <th (click)="setSorterKey('type')">Type</th>
-        <th (click)="setSorterKey('insdate')">Insdate</th>
-        <th (click)="setSorterKey('picture')">Picture</th>
-        <th (click)="setSorterKey('description')">Description</th>
-        <th (click)="setSorterKey('color')">Color</th>
+      <th (click)="setSorterKey('id')">ID</th>
+      <th (click)="setSorterKey('name')">Name</th>
+      <th (click)="setSorterKey('type')">Type</th>
+      <th (click)="setSorterKey('insdate')">Insdate</th>
+      <th (click)="setSorterKey('picture')">Picture</th>
+      <th (click)="setSorterKey('description')">Description</th>
+      <th (click)="setSorterKey('color')">Color</th>
+      <th (click)="setSorterKey('price')">Price</th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +25,9 @@
       <td>{{ product.picture }}</td>
       <td>{{ product.description }}</td>
       <td>{{ product.color }}</td>
-      <td> <button class="btn btn-info" [routerLink]="['/product-admin', product.id]">Edit</button></td>
+      <td>{{ product.price }}</td>
+      <td> <button class="btn btn-info"
+                [routerLink]="['/product-admin', product.id]">Edit</button></td>
       <td><button class="btn btn-danger">Delete</button></td>
     </tr>
   </tbody>

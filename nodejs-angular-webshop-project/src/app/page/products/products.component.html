@@ -8,6 +8,7 @@
       <th (click)="setSorterKey('picture')">Picture</th>
       <th (click)="setSorterKey('description')">Description</th>
       <th (click)="setSorterKey('color')">Color</th>
+      <th (click)="setSorterKey('price')">Price</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,7 @@
       <td>{{ product.picture }}</td>
       <td>{{ product.description }}</td>
       <td>{{ product.color }}</td>
+      <td>{{ product.price }}</td>
       <td><button class="btn btn-info" [routerLink]="['/products', product.id]">Details</button></td>
       <td><button class="btn btn-danger">Order</button></td>
     </tr>

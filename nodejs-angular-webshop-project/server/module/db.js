@@ -31,7 +31,7 @@ module.exports = class DB {
                     // ami lentebb resolve(JSON.parse(jsonString))-ként fut, 
                     // ez meg visszaadja annak, ami őt meghívta
                     err => reject(err)
-                 //   console.log(err)
+                    //   console.log(err)
                     // ha itt elkapom a hibát, akkor a getHandler-ben is 
                     // le kell kezelni
                 );
@@ -55,7 +55,7 @@ module.exports = class DB {
                 // string, mert itt még nincs parse-olva
                 if (err) {
                     return reject(err);
-                  console.log(err)
+                    console.log(err)
                     // ha az err nem 0, a return miatt nem megy tovább, 
                     // a reject jelzi, hogy nem sikerült a beolvasás
                 }
@@ -87,7 +87,7 @@ module.exports = class DB {
                             return reject(err)
                             console.log(err)
                         }
-                       console.log('file succesfully written')
+                        console.log('file succesfully written')
                         resolve(data);
                     })
                 }
@@ -103,7 +103,7 @@ module.exports = class DB {
                 dataArray => {
                     let changedIndex = dataArray.findIndex(item => item.id === data.id);
                     dataArray[changedIndex] = Object.assign({}, data)
-                    // changedIndex egy üres object, amibe a data másolata kerül
+                    // a dataArray[changedIndex]-be a data másolata kerül
                     if (changedIndex < 0) {
                         reject("product doesn't exist") // nehogy bekerüljön egy -1-es kulcs
                     }

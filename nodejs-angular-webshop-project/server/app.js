@@ -9,10 +9,21 @@ const DeleteHandler = require('./module/deleteHandler');
 
 const server = http.createServer((req, res) => {
 
-    res.setHeader("Access-Control-Allow-Origin", "*",)
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    // res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    // res.setHeader('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
     switch (req.method.toLowerCase()) {
+        case 'options':
+            const headers = {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'OPTIONS, POST, GET, DELETE, PUT',
+                'Access-Control-Allow-Headers': 'content-type',
+                'Access-Control-Max-Age': 2592000,
+            }
+            res.writeHead(204, headers);
+            console.log(res.getHeaders());
+            res.end();
+            break;
         case 'get': new GetHandler(req, res); // get kéréskor mindig példányosítunk
             // a get kérésre vonatkozóan 
             // minden a GetHandler osztályban történik ezentúl

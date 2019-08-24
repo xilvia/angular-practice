@@ -1,11 +1,6 @@
-export class Product {
+export class Cart {
     id: number = 0;
     name: string = '';
-    insdate: Date = new Date();
-    type: string = '';
     description: string = '';
     color: string = '';
-    price: number;
 }
-
-
