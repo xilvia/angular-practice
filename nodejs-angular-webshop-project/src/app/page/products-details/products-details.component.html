@@ -11,19 +11,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <!-- ha megérkezik az adat, mert a list$ tovább van pipe-olva, majd akkor lesz betöltve -->
-        <td>{{ product.id }}</td>
+      <!-- <tr *ngFor="let item of items"> -->
+        <!-- <td><a (click)="remove(item.product.id)">X</a></td> -->
         <td>{{ product.name }}</td>
         <td>{{ product.type }}</td>
         <td>{{ product.insdate }}</td>
-        <td>{{ product.picture }}</td>
+        <!-- <td><img src="{{ product.picture }}"width="50"></td> -->
         <td>{{ product.description }}</td>
         <td>{{ product.color }}</td>
-
+        <td>Total</td>
+        <td>{{total}}</td>
+        <!-- <td><img src="{{ product.picture }}"width="50"></td> -->
         
         <td><button class="btn btn-danger">Order</button></td>
-      </tr>
+      <!-- </tr> -->
     </tbody>
   </table>
   <!-- <ul>

@@ -13,7 +13,7 @@ import { ProductService } from 'src/app/service/product.service';
 export class ProductsComponent implements OnInit {
 
   pList: Product[];
-  
+
   // prodlist$: Observable<any> = this.productService.getAll();
   //$ - ez nem adat, hanem egy observable, ami az adatot körülveszi
   constructor(
@@ -22,18 +22,18 @@ export class ProductsComponent implements OnInit {
     private router: Router
 
   ) { }
-  
+
   routeToDetails(product: Product) {
     this.router.navigateByUrl(`/product-details/${product.id}`)
   }
-
+ 
   ngOnInit() {
     this.productService.getAll().subscribe(
       productList => this.pList = productList
-      ) // ez a sor minden next-nél lefut a subscribe első paramétereként
-      err => console.error(err)
+    ) // ez a sor minden next-nél lefut a subscribe első paramétereként
+    err => console.error(err)
   }
 
-  }
+}
 
 

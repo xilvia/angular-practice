@@ -13,6 +13,7 @@ export class OrderAdminComponent implements OnInit {
 
   orderKey: string = '';
   orderDirection: number = 1;
+  changeCounter: number = 0;
 
   list: Order[];
   list$: Observable<any> = this.orderService.getAll();
@@ -22,7 +23,7 @@ export class OrderAdminComponent implements OnInit {
     private ar: ActivatedRoute,
     private router: Router
 
-  ) {}
+  ) { }
 
   // routeToEdit(order: Order) {
   //   this.router.navigateByUrl(`/order-admin/${order.id}`)
@@ -55,7 +56,7 @@ export class OrderAdminComponent implements OnInit {
         response => {
           let index = this.list.indexOf(order);
           this.list.splice(index, 1);
-         
+          this.changeCounter++;
         },
         err => console.error(err)
       )

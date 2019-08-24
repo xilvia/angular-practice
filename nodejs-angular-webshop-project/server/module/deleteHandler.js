@@ -6,20 +6,15 @@ module.exports = class DeleteHandler {
 
 
         const reqParams = req.url.split('/');
-        const id = reqParams[2]
-        const opDB = new DB(id);
+
+        const opDB = new DB(reqParams[1]);
+        const id = reqParams[2];
+        opDB.deleteJsonData(id),
 
 
-        response.on('error', (err) => {
-            console.error(err);
-        });
-
-    });
-
-
-    response.on('error', (err) => {
-    console.error(err);
-});
-response.end();
-    }
+            res.on('error', (err) => {
+                console.error(err);
+            });
+        res.end();
+    };
 }

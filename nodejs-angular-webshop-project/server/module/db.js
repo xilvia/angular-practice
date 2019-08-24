@@ -9,7 +9,7 @@ module.exports = class DB {
     // konstruktor megkapja az adott json fájl nevét, pl. product
     constructor(jsonFileName) {
         // beállítjuk a json fájlokat tartalmazó mappa elérési útját
-        // dirname - projektmappából is indítható a szerver
+        // __dirname - projektmappából is indítható a szerver
         this.jsonDirectory = path.join(__dirname, '../../json');
         // beállítjuk a kezelendő json fájl teljes elérési útját
         this.jsonFilePath = path.join(
@@ -31,6 +31,7 @@ module.exports = class DB {
                     // ami lentebb resolve(JSON.parse(jsonString))-ként fut, 
                     // ez meg visszaadja annak, ami őt meghívta
                     err => reject(err)
+                 //   console.log(err)
                     // ha itt elkapom a hibát, akkor a getHandler-ben is 
                     // le kell kezelni
                 );
@@ -54,6 +55,7 @@ module.exports = class DB {
                 // string, mert itt még nincs parse-olva
                 if (err) {
                     return reject(err);
+                  console.log(err)
                     // ha az err nem 0, a return miatt nem megy tovább, 
                     // a reject jelzi, hogy nem sikerült a beolvasás
                 }
@@ -82,16 +84,17 @@ module.exports = class DB {
                     dataArray.push(data);
                     fs.writeFile(this.jsonFilePath, JSON.stringify(dataArray), 'utf8', (err) => {
                         if (err) {
-                            return console.error(err)
+                            return reject(err)
+                            console.log(err)
                         }
-                        console.log('file succesfully written')
+                       console.log('file succesfully written')
                         resolve(data);
                     })
                 }
             )
         });
 
-       
+
     }
 
     putJsonData(data) {
@@ -104,17 +107,9 @@ module.exports = class DB {
                     if (changedIndex < 0) {
                         reject("product doesn't exist") // nehogy bekerüljön egy -1-es kulcs
                     }
-
-                    dataArray.forEach(item => {
-                        if (item.id === data.id) {
-                            for (let i in item) {
-                                item[i] = data[i]
-                            }
-                        }
-                    });
                     fs.writeFile(this.jsonFilePath, JSON.stringify(dataArray), 'utf8', (err) => {
                         if (err) {
-                            return console.error(err)
+                            return reject(err)
                         }
                         console.log('file succesfully written')
                         resolve(data)
@@ -136,15 +131,17 @@ module.exports = class DB {
 
                     fs.writeFile(this.jsonFilePath, JSON.stringify(dataArray), 'utf8', (err) => {
                         if (err) {
-                            return console.error(err)
+                            return reject(err)
+                            console.log(err)
                         }
                         console.log('item succesfully deleted')
+                        resolve(data)
                     })
                 }
             )
         });
 
-    
+
     }
 
 

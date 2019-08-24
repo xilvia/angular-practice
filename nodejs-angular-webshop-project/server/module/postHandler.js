@@ -4,34 +4,34 @@ const DB = require('./db');
 module.exports = class PostHandler {
 
     constructor(req, res) {
-        let body = [];
 
-        request.on('error', (err) => {
-            console.error(err);
+        
+
+        let body = '';
+
+       req.on('error', (err) => {
+           console.error(err);
 
         }).on('data', (chunk) => {
-            body.push(chunk);
+            body += chunk;
 
         }).on('end', () => {
-            body = Buffer.concat(body);
+            // body = Buffer.concat(body);
 
             const reqParams = req.url.split('/');
 
             const opDB = new DB(reqParams[1]);
 
             const jsonData = JSON.parse(body);
-            ordersDB.postJsonData(jsonData);
 
-            response.on('error', (err) => {
+            opDB.postJsonData(jsonData);
+
+            res.on('error', (err) => {
                 console.error(err);
             });
 
         });
 
-
-        response.on('error', (err) => {
-            console.error(err);
-        });
-        response.end();
+        res.end();
     }
 }
