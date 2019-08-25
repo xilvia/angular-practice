@@ -18,3 +18,4 @@ module.exports = class DeleteHandler {
         res.end();
     };
 }
+
