@@ -1,20 +1,9 @@
 <div *ngIf="product">
-  <!-- *ngIf="product" -->
-  <div><img src="{{ product.picture }}"></div>
+  <div>
+    <img src="{{ product.picture }}">
+  </div>
   <table>
-
-
-    <!-- <th>ID</th> -->
-    <!-- <td>Name</td>
-      <td>Type</td> -->
-    <!-- <td>Insdate</td> -->
-    <!-- <td>Picture</td>
-      <td>Description</td>
-      <td>Color</td>
-       -->
-
     <tbody>
-
       <tr>
         <td>Name</td>
         <td>{{ product.name }}</td>
@@ -42,99 +31,102 @@
       </tr>
       <td><button class="btn btn-danger"
                 (click)="addToCart(id)">Add to Cart</button></td>
-      <td><button class="btn btn-danger">Order</button></td>
 
     </tbody>
   </table>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col">
 
-      <div class="cartDiv">
-        <table>
-          <tr>
-            <td>Name</td>
-            <td>{{ product.name }}</td>
-          </tr>
-          <tr>
-            <td>Type</td>
-            <td>{{ product.type }}</td>
-          </tr>
+<div id="cartContainer"
+     *ngIf="cart">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="cartDiv">
+          <table>
+            <tr>
+              <td>Name</td>
+              <td>{{ cart[0].name }}</td>
+            </tr>
+            <tr>
+              <td>Type</td>
+              <td>{{ cart[0].type }}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><img src="{{ cart[0].picture }}"
+                     width="50"></td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>{{ cart[0].description }}</td>
+            </tr>
+            <tr>
+              <td>Color</td>
+              <td>{{ cart[0].color }}</td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td>{{ cart[0].price }}</td>
+            </tr>
+            <tr>
+              <td>Items</td>
+              <td>{{ counter }}</td>
+            <tr>
+              <td>Total</td>
+              <td>{{ total }}</td>
+            </tr>
+            <tr>
+              <td><button class="btn btn-danger"
+                        (click)="removeItem(id)">Remove Item</button></td>
+            </tr>
 
-          <tr>
-            <td></td>
-            <td><img src="{{ product.picture }}"
-                   width="50"></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>{{ product.description }}</td>
-          </tr>
-          <tr>
-            <td>Color</td>
-            <td>{{ product.color }}</td>
-          </tr>
-          <tr>
-            <td>Price</td>
-            <td>{{ product.price }}</td>
-          </tr>
-
-          <tr>
-            <td>Items</td>
-            <td>{{ counter }}</td>
-          <tr>
-            <td>Total</td>
-            <td>{{ total }}</td>
-
-          </tr>
-
-        </table>
-
+          </table>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-
-
-<div *ngIf="">
-  <form (submit)="onSubmit($event)"
-        action="">
-    <div class="form-group">
-      <label for="product">Product</label>
-      <input name="product"
-             class="form-control"
-             type="text">
-    </div>
-    <div class="form-group">
-      <label for="userName">Username</label>
-      <input name="userName"
-             class="form-control"
-             type="text">
-    </div>
-    <div class="form-group">
-      <label for="userEmail">User Email</label>
-      <input name="userEmail"
-             type="text"
-             class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="shippingAddress">Shipping Address</label>
-      <input name="shippingAddress"
-             type="text"
-             class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="quantity">Quantity</label>
-      <input name="quantity"
-             class="form-control"
-             type="text">
-    </div>
-
-    <button class="btn btn-primary">
-      Save
-    </button>
-
-  </form>
+  <div>
+    <form (submit)="onSubmit($event)"
+          action="">
+      <div class="form-group">
+        <label for="product">Product</label>
+        <input name="product"
+               class="form-control"
+               type="text"
+               [(ngModel)]="cart[0].id">
+      </div>
+      <div class="form-group">
+        <label for="userName">Username</label>
+        <input name="userName"
+               required
+               class="form-control"
+               type="text">
+      </div>
+      <div class="form-group">
+        <label for="userEmail">User Email</label>
+        <input name="userEmail"
+               required
+               type="email"
+               class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="shippingAddress">Shipping Address</label>
+        <input name="shippingAddress"
+               required
+               type="text"
+               class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input name="quantity"
+               class="form-control"
+               [(ngModel)]="counter"
+               type="text">
+      </div>
+      <button class="btn btn-primary">
+        Order
+      </button>
+    </form>
+  </div>
 </div>
