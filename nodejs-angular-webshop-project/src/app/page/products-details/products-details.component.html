@@ -33,11 +33,24 @@
                 (click)="addToCart(id)">Add to Cart</button></td>
 
     </tbody>
-  </table>
+  </table> 
 </div>
 
+
+
+<!-- <div class="card bg-dark text-white">
+  <img src="..." class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
+</div> -->
+
+
+
 <div id="cartContainer"
-     *ngIf="cart">
+     *ngIf="cart && cart.length">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -90,39 +103,35 @@
     <form (submit)="onSubmit($event)"
           action="">
       <div class="form-group">
-        <label for="product">Product</label>
-        <input name="product"
-               class="form-control"
-               type="text"
-               [(ngModel)]="cart[0].id">
-      </div>
-      <div class="form-group">
         <label for="userName">Username</label>
         <input name="userName"
                required
                class="form-control"
-               type="text">
+               type="text"
+               [(ngModel)]="order.userName">
       </div>
       <div class="form-group">
         <label for="userEmail">User Email</label>
         <input name="userEmail"
                required
                type="email"
-               class="form-control">
+               class="form-control"
+               [(ngModel)]="order.userEmail">
       </div>
       <div class="form-group">
         <label for="shippingAddress">Shipping Address</label>
         <input name="shippingAddress"
                required
                type="text"
-               class="form-control">
+               class="form-control"
+               [(ngModel)]="order.shippingAddress">
       </div>
       <div class="form-group">
         <label for="quantity">Quantity</label>
         <input name="quantity"
                class="form-control"
-               [(ngModel)]="counter"
-               type="text">
+               type="text"
+               [(ngModel)]="counter">
       </div>
       <button class="btn btn-primary">
         Order
