@@ -10,9 +10,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UserEditComponent implements OnInit {
 
-  user: User = new User();
-  userSubscription: any;
-  userList: User[];
+  user: User;
+ //user: User = new User();
+ // userSubscription: any;
+ // userList: User[];
   changeCounter: number = 0;
 
 
@@ -20,16 +21,12 @@ export class UserEditComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private ar: ActivatedRoute,
-  ) {
-
-
-
-  }
+  ) {}
 
   ngOnInit() {
-    this.userSubscription = this.userService.getAll().subscribe(
-      users => this.userList = users
-    )
+    //this.userSubscription = this.userService.getAll().subscribe(
+    //  users => this.userList = users
+  //  )
     // this.ar.params.subscribe(params => {
     //   this.userService.getOne(params.id).subscribe(user => {
     //     this.user = user

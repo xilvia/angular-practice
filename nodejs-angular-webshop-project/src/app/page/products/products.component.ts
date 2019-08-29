@@ -23,9 +23,9 @@ export class ProductsComponent implements OnInit {
 
   ) { }
 
-  routeToDetails(product: Product) {
-    this.router.navigateByUrl(`/product-details/${product.id}`)
-  }
+  // routeToDetails(product: Product) {
+  //   this.router.navigateByUrl(`/product-details/${product.id}`)
+  // }
  
   ngOnInit() {
     this.productService.getAll().subscribe(

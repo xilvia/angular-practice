@@ -53,7 +53,7 @@ export class UsersComponent implements OnInit {
   onDelete(user: User) {
     if (confirm(`Are you sure to delete ${user.name.first} ${user.name.last}?`))
       this.userService.remove(user.id).subscribe(
-        response => {
+        user => {
           let index = this.userList.indexOf(user);
           this.userList.splice(index, 1);
           this.changeCounter++;

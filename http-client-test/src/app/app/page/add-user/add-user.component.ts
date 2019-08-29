@@ -23,10 +23,10 @@ export class AddUserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.userSubscription = this.userService.getAll().subscribe(
-      users => this.userList = users
+    // this.userSubscription = this.userService.getAll().subscribe(
+    //   users => this.userList = users
 
-    )
+    //)
   }
 
   onSubmit(ev: Event): void {

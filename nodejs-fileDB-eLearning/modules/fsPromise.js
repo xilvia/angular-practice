@@ -14,7 +14,7 @@ class FileHandler {
       // függvény nem megy tovább, mert elkapja az if, a kimenete az,
       // hogy meghívja a callback-et
 
-      // ha több fájl ki akarok olvasni promise-szal
+      // ha több fájl ki akarok olvasni promise-szal:
       // const p1 = fsPromise.readFile(elérési út);
       // const p2 = fsPromise.readFile(elérési út);
       // const p3 = fsPromise.readFile(elérési út);

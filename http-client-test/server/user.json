@@ -5443,28 +5443,6 @@
       "email": "kapuvari.szilvia@gmail.com",
       "phone": "205474284",
       "Phone": "205474284"
-    },
-    {
-      "id": 106,
-      "name": {
-        "first": "Kapuvári",
-        "last": "Szilvia"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "205474284"
-    },
-    {
-      "id": 107,
-      "name": {
-        "first": "Kapuvári",
-        "last": "Szilvia"
-      },
-      "isActive": false,
-      "age": 18,
-      "email": "kapuvari.szilvia@gmail.com",
-      "phone": "205474288"
     }
   ]
 }

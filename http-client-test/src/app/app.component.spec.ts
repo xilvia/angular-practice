@@ -1,5 +1,5 @@
 import { TestBed, async, tick, fakeAsync } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { AppComponent } from "./AppComponent";
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { UserService } from './service/user.service';
 import { User } from './model/user';

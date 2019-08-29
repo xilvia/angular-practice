@@ -2,7 +2,7 @@
 const fs = require('./fsPromise');
 const path = require('path');
 const viewDir = path.join(__dirname, '../views'); // itt adom meg, hol
-// találja meg a views mappát
+// találja meg a views mappát, ott az index.html
 
 // Get HTML content and include variables.
 const render = (name, vars = {}) => { // a fájl neve, amit renderelni 
@@ -18,7 +18,7 @@ const render = (name, vars = {}) => { // a fájl neve, amit renderelni
                 // title: 'yellowRoad students', az index.html-ben kell
                 // megjelennie
                 resolve(html); // resolve, tehát van adatom, és ezt küldöm
-                // majd vissza a kliensnek, ez 
+                // majd vissza a kliensnek
             }, (err) => {
                 resolve('Err: ' + err.toString()); // itt direkt van resolve
                 // csak itt úgy, hogy kiíratom a hibát
