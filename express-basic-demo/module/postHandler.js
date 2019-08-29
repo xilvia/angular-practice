@@ -1,16 +1,21 @@
-const Db = require('./db');
+const DB = require('./db');
+const urlParser = require('url');
 
-module.exports = class postHandler {
+module.exports = class PostHandler {
   constructor(req, res) {
-    const reParams = req.url.split('/');
-    const dB = new Db(reParams[1]);
-    let allData = '';
+
+    // Example: /orders/7 => ["", "orders", "7"]
+    const parsedUrl = urlParser.parse(req.url);
+    const reqParams = parsedUrl.pathname.split('/');
+
+    const db = new DB(reqParams[1]);
+    let data = '';
     req.on('data', (chunk) => {
-      allData += chunk;
+      data += chunk;
     });
-    req.on('end', () => {
-      res.end(allData);
-      dB.add(JSON.parse(allData), reParams[2]).then(newData => res.end(JSON.stringify(newData)));
+    req.on('end', async () => {
+      let response = await db.create(JSON.parse(data));
+      res.end( JSON.stringify(response) );
     });
   }
 };

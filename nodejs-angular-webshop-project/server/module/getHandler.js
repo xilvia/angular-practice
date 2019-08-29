@@ -27,6 +27,5 @@ module.exports = class GetHandler {
         // ordersDB meghívása után meghívom a find-ot, ugrás oda
 
 
-
     }
 };
