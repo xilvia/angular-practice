@@ -1,5 +1,6 @@
 // defining template engine
-var fs = require('fs') // this engine requires the fs module
+var fs = require('fs')
+// this engine requires the fs module
 const engine = (filePath, options, callback) => { // define the template engine
     fs.readFile(filePath, (err, content) => {
         // motor beolvassa a fájl, ha nem sikerült, hibát jelez,
