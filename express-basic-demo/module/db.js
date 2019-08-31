@@ -9,7 +9,7 @@ module.exports = class DB {
   // A konstruktor megkapja az adott json fájl nevét.
   constructor(jsonFileName) {
     // Beállítjuk a json fájlokat tartalmazó mappa elérési útját.
-    this.jsonDirectory = path.join(__dirname, './../json');
+    this.jsonDirectory = path.join(__dirname, '../json');
 
     // Beállítjuk a kezelendő json fájl teljes elérési útját.
     this.jsonFilePath = path.join(
@@ -25,22 +25,22 @@ module.exports = class DB {
     if (id == 0) {
       return await this.filterByQueryParams(dataArray, query);
     }
-    return dataArray.filter( item => item.id == id )[0] || {};
+    return dataArray.filter(item => item.id == id)[0] || {};
   }
 
   filterByQueryParams(arr, query) {
-      return new Promise( (resolve, reject) => {
+    return new Promise((resolve, reject) => {
 
-        if (query) {
-          let queryParams = query.split('=');
-          let filtered = arr.filter(item =>
-            item[queryParams[0]] == decodeURI(queryParams[1])
-          );
-          resolve(filtered);
-        }
+      if (query) {
+        let queryParams = query.split('=');
+        let filtered = arr.filter(item =>
+          item[queryParams[0]] == decodeURI(queryParams[1])
+        );
+        resolve(filtered);
+      }
 
-        resolve(arr);
-      });
+      resolve(arr);
+    });
   }
 
   /**
@@ -49,25 +49,25 @@ module.exports = class DB {
    * @param {Object} obj object which will be replaces existing object.
    */
   async update(id, obj) {
-      // Lekérni az összes adatot a json fájlból (this.getJsonArray)
-      let dataArray = await this.getJsonArray();
+    // Lekérni az összes adatot a json fájlból (this.getJsonArray)
+    let dataArray = await this.getJsonArray();
 
-      if (obj.id !== id) {
-        throw new Error(`Object id isn't met with url parameter. ${id} !== ${obj.id}`);
+    if (obj.id != id) {
+      throw new Error(`Object id isn't met with url parameter. ${id} !== ${obj.id}`);
+    }
+
+    // Megkeresni melyiknek az id-je azonos a paraméterben kapott id-vel.
+    // Kicsrélni a megtalált objektumot a paraméterben kapottal.
+    for (let i = 0; i < dataArray.length; i++) {
+      if (dataArray[i].id == id) {
+        dataArray[i] = obj;
+        break;
       }
+    }
 
-      // Megkeresni melyiknek az id-je azonos a paraméterben kapott id-vel.
-      // Kicsrélni a megtalált objektumot a paraméterben kapottal.
-      for (let i = 0; i < dataArray.length; i++) {
-        if (dataArray[i].id === id) {
-          dataArray[i] = obj;
-          break;
-        }
-      }
-
-      // Visszaírni az adtokat a fájlba (this.write)
-      await this.write(dataArray);
-      return obj;
+    // Visszaírni az adtokat a fájlba (this.write)
+    await this.write(dataArray);
+    return obj;
   }
 
   async create(item) {
@@ -92,7 +92,7 @@ module.exports = class DB {
       return 1;
     }
 
-    dataArray.sort( (a, b) => a.id - b.id );
+    dataArray.sort((a, b) => a.id - b.id);
     return dataArray[dataArray.length - 1].id + 1;
   }
 
@@ -101,4 +101,39 @@ module.exports = class DB {
     await FsUtil.writeFile(this.jsonFilePath, data);
   }
 
+  remove(id) {
+    return new Promise((resolve, reject) => {
+      let selectedIndex;
+      this.getJsonArray().then((dataArray) => {
+        for (let i = 0; i < dataArray.length; i++) {
+          if (dataArray[i].id == id) {
+            selectedIndex = i;
+            break;
+          }
+        }
+        const removedData = dataArray.splice(selectedIndex, 1)[0];
+        fs.writeFile(this.jsonFilePath, JSON.stringify(dataArray, null, 4), 'utf-8', (err) => {
+          if (err) {
+            return reject(err)
+          }
+          resolve(removedData);
+        });
+      });
+    });
+  }
+
+  // async remove(id) {
+  //   let dataArray = await this.getJsonArray();
+  //   let deleteIndex = 0;
+  //   for (let k in dataArray) {
+  //     if (dataArray[k].id == id) {
+  //       deleteIndex = k;
+  //       break;
+  //     }
+  //   }
+
+  //   dataArray.splice(deleteIndex, 1);
+  //   await this.write(dataArray);
+  //   return id;
+  // }
 };
