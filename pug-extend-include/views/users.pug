@@ -1,0 +1,15 @@
+extends layout.pug
+block content
+  - var url = 'http://index.hu';
+  - var classes= ['class-1', 'class-2', 'class-3']
+
+  h1(data-key='my-h1', my-attr='my-awsome-attr') #{title}
+  p= message
+  a(href=url, class=classes) Index
+  if description
+    div= description
+  unless description
+    div no description
+    
+  if includes
+  include includes/users_footer.pug
