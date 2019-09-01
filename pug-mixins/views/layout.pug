@@ -1,0 +1,47 @@
+//- mixin list
+//-   ul
+//-     li first
+//-     li second
+//-     li third
+
+mixin user(name)
+  .user
+    span= name
+    if block
+      block
+      //- mixinnel block-okat is meg lehet jeleníteni
+      //- ekkor fogja megjelenítani, hogy Kati kiváló elme
+      //- az a block a users.pug-ban található
+
+mixin pet(name)
+  li.pet= name
+ul
+  +pet('cat')
+  +pet('dog')
+  +pet('pig')
+
+mixin article(title)
+  .article
+    .article-wrapper
+      h1= title
+      if block
+        block
+      else
+        p No content provided
+
++article('Hello world')
+
++article('Hello world')
+  p This is my
+  p Amazing article
+
+//- első article - a helyettesítő szöveg jelenik meg
+//- második article - ebben a mixin block-jában definiált tartalom jelenik meg
+//- ott jelenik meg, ahol a block kulcsszó van. 
+//- if- a block létezésének vizsgálatára 
+
+include includes/header.pug
+body
+  block content
+
+  include includes/footer.pug
