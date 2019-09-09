@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.card {
+  height: calc(100% - 15px);
+  margin-bottom: 15px;
+}
