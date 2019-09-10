@@ -16,4 +16,7 @@ block content
               input(type='checkbox' value='#{true}') 
           .card-footer
             a.btn.btn-primary(href='#') Show
+            a.btn.btn-primary(href='/products/new') Add
+            a.btn.btn-primary(href=`/products/update/${product.id}`) Edit
+            a.btn.btn-danger(href=`/products/delete/${product.id}`) Delete
           

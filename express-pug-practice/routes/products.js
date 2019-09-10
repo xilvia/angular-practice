@@ -1,22 +1,47 @@
 var express = require('express');
 var router = express.Router();
-var DB = require('./../module/db')
-const db = new DB(); // ezt ide kell tenni, hogya connection limit problémát kezelni tudjam
-// itt ez csak egyszer fog elindulni
+const DB = require('../module/db');
+const db = new DB();
 
-/* GET users listing. */
-router.get('/', async function (req, res, next) {
-
-  // let jsonData = await db.mockData() // erre csak mockolásnál volt szükség
-
+/* GET home page. */
+router.get('/', async (req, res, next) => {
+  // let products = await db.mockData();
   let realData = await db.read();
   console.log(realData[0]);
 
-  res.render('products', {
-    title: 'Express',
-    message: 'respond with a products',
-    products: realData // mostmár nem a jsonData-val dolgozunk, ami mockdata volt
-  });
+  res.render('products', { title: 'Products', products: realData });
+});
+
+router.get('/new', async (req, res, next) => {
+  res.render('new-product');
+});
+
+// Create new product.
+router.post('/', async (req, res, next) => {
+  let result = await db.create(req.body);
+  res.json(result);
+});
+
+// update
+
+router.get('/update/:id', async (req, res, next) => {
+  let editedItem = await db.update(req.params.id);
+  res.render('update')
+});
+
+router.post('/update/:id', async (req, res, next) => {
+  let result = await db.update(req.body, req.params.id);
+  res.render('products');
+
+  // router.post('/', async (req, res, next) => {
+  //   let postedItem = await db.create(req.body);
+  //  res.render('products')
+});
+
+//delete
+router.get('/delete/:id', async (req, res, next) => {
+  let deletedItem = await db.remove(req.params.id)
+  res.json(deletedItem)
 });
 
 module.exports = router;

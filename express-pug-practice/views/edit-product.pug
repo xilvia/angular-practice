@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2 Edit product
+  form.form(action="/products", method="post")
+    .form-group
+      label Name
+      input.form-control(name="name", value=#{data.name})
+    .form-group
+      label Manufacturer
+      input.form-control(name="manufacturer", value=#{data.manufacturer})
+    .form-group
+      label Price
+      input.form-control(name="price", value=#{data.price})
+    .form-group
+      label Stock
+      input.form-control(name="stock", value=#{data.stock})
+    button.btn.btn-primary(type="submit") Save
