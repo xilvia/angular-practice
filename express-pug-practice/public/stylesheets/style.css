@@ -1,13 +1,5 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-
 .card {
   height: calc(100% - 15px);
   margin-bottom: 15px;
+  margin-top: 20px;
 }
