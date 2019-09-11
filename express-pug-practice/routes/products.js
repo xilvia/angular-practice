@@ -16,6 +16,12 @@ router.get('/new', async (req, res, next) => {
   res.render('new-product');
 });
 
+router.get('/update/:id', async (req, res, next) => {
+  let selectedProduct = await db.read(req.params.id);
+  console.log(selectedProduct);
+  res.render('update-product', { product: selectedProduct[0] });
+});
+
 // Create new product.
 router.post('/', async (req, res, next) => {
   let result = await db.create(req.body);
@@ -23,23 +29,14 @@ router.post('/', async (req, res, next) => {
   res.redirect('/products');
 });
 
-// update
-router.get('/update/:id', async (req, res, next) => {
-  let editedItem = await db.update(req.body);
-  res.render('edit-product', { data: data });
-
+router.post('/update', async (req, res, next) => {
+  let result = await db.update(req.body);
+  res.json(result);
 });
 
-router.post('/update/:id', async (req, res, next) => {
-  let result = await db.update(req.body, req.params.id);
-  res.render('edit-products');
-  res.redirect('/products');
-});
-
-//delete
 router.get('/delete/:id', async (req, res, next) => {
-  let deletedItem = await db.remove(req.params.id)
-  res.redirect('/products');
+  let result = await db.delete(req.params.id);
+  res.json(result);
 });
 
 module.exports = router;
