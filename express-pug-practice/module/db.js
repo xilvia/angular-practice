@@ -69,18 +69,22 @@ module.exports = class DB {
 
     }
 
-    async create(data) {
+
+
+    async create(product) {
         let sql =
             `
         INSERT INTO products 
         (name, manufacturer, price, stock, active) 
         VALUES
-        ('${data.name}', ${data.manufacturer}, ${data.price}, ${data.stock}, 1)
+        ('${product.name}', ${product.manufacturer}, ${product.price}, ${product.stock}, 1)
         `;
 
         let result = await this.conn.query(sql);
         return result;
     }
+
+
 
     async delete(id) {
         let sql = `
@@ -90,9 +94,10 @@ module.exports = class DB {
         return result;
     }
 
+
     async update(product) {
-        let sql = 
-        `
+        let sql =
+            `
         UPDATE products 
         SET 
             name = '${product.name}', 
@@ -105,4 +110,68 @@ module.exports = class DB {
         let result = await this.conn.query(sql);
         return result;
     }
+
+    async readUser(id) {
+        let sql = `
+        SELECT 
+            u.id, 
+            u.name, 
+            u.email,
+            u.password, 
+            u.token	
+        FROM 
+            users u
+        `;
+
+        if (id) {
+            sql += ` WHERE u.id = ${id}`;
+        }
+
+        let result = await this.conn.query(sql);
+        return result;
+
+    }
+
+    async createUser(user) {
+
+
+        let sql =
+            `
+        INSERT INTO users 
+        (name, email, password, token) 
+        VALUES
+        ('${user.name}', '${user.email}', SHA1('${user.password}'), '${user.token}')
+        `;
+
+
+        let result = await this.conn.query(sql);
+        return result;
+    }
+
+
+    async deleteUser(id) {
+        let sql = `
+            DELETE FROM users WHERE id = ${id}
+        `;
+        let result = await this.conn.query(sql);
+        return result;
+    }
+
+
+    async updateUser(user) {
+        let sql =
+            `
+        UPDATE users 
+        SET 
+            name = '${user.name}', 
+            email = '${user.email}', 
+            password = '${user.password}', 
+            token = '${user.token}'
+        WHERE id = ${user.id}
+        `;
+        let result = await this.conn.query(sql);
+        return result;
+    }
+
+
 };

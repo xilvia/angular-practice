@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h2 Update user
+  form.form(action="/users/update", method="post")
+    input(type="hidden", name="id", value=user.id)
+    .form-group
+      label Name
+      input.form-control(name="name" value=user.name)
+    .form-group
+      label Email
+      input.form-control(name="email" value=user.email)
+    .form-group
+      label Password
+      input.form-control(name="password" type="password" value=user.password)
+    .form-group
+      label Token
+      input.form-control(name="token", value=user.token)
+    button.btn.btn-primary(type="submit") Save
