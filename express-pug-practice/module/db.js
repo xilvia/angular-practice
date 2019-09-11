@@ -78,23 +78,25 @@ module.exports = class DB {
         return result;
     }
 
-    async update(data) {
+    async update(data, id) {
         let sql =
             `
-        UPDATE products SET (name, manufacturer, price, stock, active) 
-        VALUES
-        ('${data.name}', ${data.manufacturer}, ${data.price}, ${data.stock}, 1);
+        UPDATE products SET 'name'= ${data.name}', 
+        manufacturer = ${data.manufacturer}, 
+        price = ${data.price}, 
+        stock = ${data.stock}, 1)
+        WHERE ID=${id};
         `
         let result = await this.conn.query(sql);
         return result;
     }
 
-    async remove(data) {
+    async remove(id) {
 
         let sql =
             `
         DELETE FROM products
-        WHERE  ID=${data.id};
+        WHERE ID=${id};
         `
         let result = await this.conn.query(sql);
 

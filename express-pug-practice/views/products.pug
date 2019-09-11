@@ -2,6 +2,9 @@ extends layout
 
 block content
   .row
+    .col-md-6.offset
+      a.btn.btn-primary(href='/products/new') Add
+  .row
     each product in products
       .col-3
         .card
@@ -16,7 +19,6 @@ block content
               input(type='checkbox' value='#{true}') 
           .card-footer
             a.btn.btn-primary(href='#') Show
-            a.btn.btn-primary(href='/products/new') Add
             a.btn.btn-primary(href=`/products/update/${product.id}`) Edit
             a.btn.btn-danger(href=`/products/delete/${product.id}`) Delete
           
