@@ -1,37 +1,18 @@
 extends layout
 
 block content 
-  form(action='/', method='POST')
+  form(action='/contact', method='POST')
     .form-row
-      .form-group.col-md-6
+      .form-group.col-md-8
         label(for='inputFirstName') Firstname
         input#inputPassword4.form-control(type='text', name='firstName')
-      .form-group.col-md-6
+      .form-group.col-md-8
         label(for='inputLastName') Lastname
         input#inputPassword4.form-control(type='text', name='lastName')
-      .form-group.col-md-6
+      .form-group.col-md-8
         label(for='inputEmail') Email
         input#inputEmail4.form-control(type='email', name='email')
-      .form-group.col-md-6
+      .form-group.col-md-8
         label(for='inputPassword') Password
         input#inputPassword4.form-control(type='password', name='password')
-      .form-group.col-md-12
-        label(for='inputAddress', name='address') Address
-    .form-row
-      .form-group.col-md-6
-        label(for='inputCity') City
-        input#inputCity.form-control(type='text', name='city')
-      .form-group.col-md-4
-        label(for='inputCountry') Country
-        select#inputState.form-control
-          option(selected='') Choose...
-          option ...
-      .form-group.col-md-2
-        label(for='inputZip') Zip
-        input#inputZip.form-control(type='text', name='zip')
-      .form-group
-        .form-check
-          input#gridCheck.form-check-input(type='checkbox', name='checkbox')
-          label.form-check-label(for='gridCheck')
-          | Check me out
     button.btn.btn-primary(type='submit') Sign in

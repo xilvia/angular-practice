@@ -1,16 +1,21 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+//const bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const UserDB = require('./module/user')
+const userDB = new UserDB();
+
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var aboutRouter = require('./routes/about');
-var contactRouter = require('./routes/contact');
-var productsRouter = require('./routes/products');
 
 var app = express();
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,8 +24,23 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(async (req, res, next) => {
+  let user = await userDB.checklogin(req)
+  if (user) {
+    req.user = user;
+  }
+  next();
+});
+
+app.use("/logout", (req, res, next) => {
+  res.clearCookie('uuid');
+  res.redirect("/login");
+})
 
 app.use('/', indexRouter);
 app.use('/login', require('./routes/login'));
@@ -46,5 +66,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;
