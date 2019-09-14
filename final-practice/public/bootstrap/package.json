@@ -1,11 +1,16 @@
 {
+<<<<<<< HEAD
   "_from": "bootstrap",
+=======
+  "_from": "bootstrap@^4.3.1",
+>>>>>>> 67a67377777d27ce73bd752ff1a7a1646f17b793
   "_id": "bootstrap@4.3.1",
   "_inBundle": false,
   "_integrity": "sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag==",
   "_location": "/bootstrap",
   "_phantomChildren": {},
   "_requested": {
+<<<<<<< HEAD
     "type": "tag",
     "registry": true,
     "raw": "bootstrap",
@@ -14,6 +19,16 @@
     "rawSpec": "",
     "saveSpec": null,
     "fetchSpec": "latest"
+=======
+    "type": "range",
+    "registry": true,
+    "raw": "bootstrap@^4.3.1",
+    "name": "bootstrap",
+    "escapedName": "bootstrap",
+    "rawSpec": "^4.3.1",
+    "saveSpec": null,
+    "fetchSpec": "^4.3.1"
+>>>>>>> 67a67377777d27ce73bd752ff1a7a1646f17b793
   },
   "_requiredBy": [
     "#USER",
@@ -21,8 +36,13 @@
   ],
   "_resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.3.1.tgz",
   "_shasum": "280ca8f610504d99d7b6b4bfc4b68cec601704ac",
+<<<<<<< HEAD
   "_spec": "bootstrap",
   "_where": "C:\\Users\\Training\\Desktop\\Új mappa\\if14\\if14\\angular-practice\\final-practice",
+=======
+  "_spec": "bootstrap@^4.3.1",
+  "_where": "Z:\\angular-practice\\final-practice",
+>>>>>>> 67a67377777d27ce73bd752ff1a7a1646f17b793
   "author": {
     "name": "The Bootstrap Authors",
     "url": "https://github.com/twbs/bootstrap/graphs/contributors"

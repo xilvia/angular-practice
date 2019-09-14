@@ -19,14 +19,45 @@ module.exports = class DB {
     return result;
   }
 
-  create() { }
-  update() { }
-  delete(id) {
+  async create(employee) {
+    let sql =
+      `
+        INSERT INTO employees (name, department, email, password, token)
+        VALUES ('${employee.name}', 
+        ${employee.department}, 
+        '${employee.email}', 
+        SHA1('${employee.password}'), 
+        '${employee.token}');
+    `;
+
+    let result = await this.conn.query(sql);
+    return result;
+  }
+
+  async update(employee) {
+    let sql =
+      `
+    UPDATE employees 
+    SET 
+        name = '${employee.name}', 
+        department = '${employee.department}', 
+        email = '${employee.email}',
+        password ='${employee.password}',
+        token = '${employee.token}'
+        
+    WHERE id = ${employee.id}
+    `;
+    let result = await this.conn.query(sql);
+    return result;
+  }
+
+
+  async delete(id) {
     const sql = `
     DELETE FROM employees
     WHERE id=${id}
     `
     let result = await this.conn.query(sql);
     return result;
-   }
+  }
 }

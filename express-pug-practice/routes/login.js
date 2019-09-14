@@ -23,7 +23,6 @@ router.post('/', async (req, res, next) => {
     let token = getToken();
     res.cookie('uuid', token);
     await db.setUserToken(result[0].id, token);
-
     return res.redirect('/');
   }
   res.render('login', { title: 'Express' });
