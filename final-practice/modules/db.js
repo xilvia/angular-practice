@@ -23,7 +23,7 @@ module.exports = class DB {
 
     let sql = `
     
-    SELECT FROM employees 
+    SELECT * FROM employees 
     WHERE id=${id}
     `;
 

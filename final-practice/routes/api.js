@@ -16,7 +16,7 @@ router.get('/users', async (req, res, next) => {
 }); // ez az api/users kérésre küldi a választ
 
 router.get('/users/:id', async (req, res, next) => {
-  let result = await db.read(req.params.id);
+  let result = await db.readOne(req.params.id);
   res.json(result);
 })
 
@@ -36,15 +36,10 @@ router.post('/users', async (req, res, next) => {
 
 // update
 
-router.get('/users/:id', async (req, res, next) => {
-  let selected = await db.read(req.params.id);
-  res.send('/users', { user: selected });
-})
-
-router.post('/users', async (req, res, next) => {
-  let updated = await db.update(req.body);
-  res.json(updated);
-})
+// router.post('/users/:id', async (req, res, next) => {
+//   let updated = await db.update(req.body);
+//   res.json(updated);
+// })
 
 
 module.exports = router;
