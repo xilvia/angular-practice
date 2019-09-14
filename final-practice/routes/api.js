@@ -8,12 +8,14 @@ router.get('/', (req, res, next) => {
   res.json({ message: 'Server works' });
 }) // sima api-ra indított kérésre így megy a válasz
 
-// get
+// get all
 
 router.get('/users', async (req, res, next) => {
   let result = await db.read();
   res.json(result);
 }); // ez az api/users kérésre küldi a választ
+
+// get one
 
 router.get('/users/:id', async (req, res, next) => {
   let result = await db.readOne(req.params.id);
@@ -36,10 +38,10 @@ router.post('/users', async (req, res, next) => {
 
 // update
 
-// router.post('/users/:id', async (req, res, next) => {
-//   let updated = await db.update(req.body);
-//   res.json(updated);
-// })
+router.put('/users/:id', async (req, res, next) => {
+  let updated = await db.update(req.body);
+  res.json(updated);
+})
 
 
 module.exports = router;
