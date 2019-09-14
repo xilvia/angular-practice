@@ -15,6 +15,11 @@ router.get('/users', async (req, res, next) => {
   res.json(result);
 }); // ez az api/users kérésre küldi a választ
 
+router.get('/users/:id', async (req, res, next) => {
+  let result = await db.read(req.params.id);
+  res.json(result);
+})
+
 // delete
 
 router.delete('/users/:id', async (req, res, next) => {

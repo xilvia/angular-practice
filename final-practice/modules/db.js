@@ -19,6 +19,17 @@ module.exports = class DB {
     return result;
   }
 
+  async readOne(id) {
+
+    let sql = `
+    
+    SELECT FROM employees 
+    WHERE id=${id}
+    `;
+
+    let result = await this.conn.query(sql);
+    return result;
+  }
   async create(employee) {
     let sql =
       `
