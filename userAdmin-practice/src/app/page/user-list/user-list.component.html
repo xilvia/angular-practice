@@ -20,17 +20,17 @@
       <table class="table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Active</th>
-            <th>Age</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <th (click)="setSorterKey('id')">#</th>
+            <th (click)="setSorterKey('name')">Name</th>
+            <th (click)="setSorterKey('isActive')">Active</th>
+            <th (click)="setSorterKey('age')">Age</th>
+            <th (click)="setSorterKey('email')">Email</th>
+            <th (click)="setSorterKey('phone')">Phone</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr *ngFor="let user of users">
+          <tr *ngFor="let user of userList | filter:filterPhrase:changeCounter| sorter:orderKey:orderDirection:changeCounter">
             <td>{{ user.id }}</td>
             <td>{{ user.name.first }} {{ user.name.last }}</td>
             <td>{{ user.isActive }}</td>
@@ -47,10 +47,3 @@
 </div>
 
 <!-- | filter:filterPhrase:changeCounter | sorter:orderKey:orderDirection:changeCounter -->
-
-<!-- <th (click)="setSorterKey('id')">#</th>
-<th (click)="setSorterKey('name')">Name</th>
-<th (click)="setSorterKey('isActive')">Active</th>
-<th (click)="setSorterKey('age')">Age</th>
-<th (click)="setSorterKey('email')">Email</th>
-<th (click)="setSorterKey('phone')">Phone</th> -->
