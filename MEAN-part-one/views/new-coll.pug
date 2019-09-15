@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h2 Add new user
+  form.form(action="/colleagues", method="post")
+    .form-group
+      label Name
+      input.form-control(name="name")
+    .form-group
+      label Job
+      input.form-control(name="job")
+    .form-group
+      label Salary
+      input.form-control(name="salary")
+    .form-group
+      label Email
+      input.form-control(name="email")
+    .form-group
+      label Password
+      input.form-control(name="password" type="password")
+    .form-group
+      label Token
+      input.form-control(name="token")
+    button.btn.btn-primary(type="submit") Save

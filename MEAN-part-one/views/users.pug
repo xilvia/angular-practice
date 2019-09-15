@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .row
+    .col-10
+      table.table.table-striped
+        thead
+          tr
+            th id
+            th name
+            th job
+            th salary
+            th email
+            th password
+            th token
+        tbody
+          each user in users
+            tr 
+              td #{user.id}
+              td #{user.name}
+              td #{user.job}
+              td #{user.salary}
+              td #{user.email}
+              td #{user.password}
+              td #{user.token}

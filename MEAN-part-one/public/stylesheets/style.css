@@ -1,0 +1,13 @@
+.card {
+  height: calc(100% - 15px);
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.btn-block {
+  margin-top: 40px;
+}
+
+.form-row {
+  margin-top: 40px;
+}

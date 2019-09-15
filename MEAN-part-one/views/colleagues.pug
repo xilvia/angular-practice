@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .row
+    .col-md-3.offset
+      a.btn.btn-primary.btn-block(href='colleagues/new') Add
+  .row
+    each user in users
+      .col-3
+        .card
+          .card-header
+            h5= user.name
+          .card-body
+              p.card-text # #{user.id}
+              p.card-text Name: #{user.name}
+              p.card-text Job: #{user.job}
+              p.card-text Salary: #{user.salary}
+              p.card-text Email: #{user.email} 
+          .card-footer
+            - let url = `colleagues/delete/${user.id}`;
+            - let updateUrl = `colleagues/update/${user.id}`;
+            .btn-group
+              a.btn.btn-info(href=updateUrl) Update
+              a.btn.btn-danger(href=url) Del

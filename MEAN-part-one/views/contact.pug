@@ -1,0 +1,18 @@
+extends layout
+
+block content 
+  form(action='/contact', method='POST')
+    .form-row
+      .form-group.col-md-8
+        label(for='inputFirstName') Firstname
+        input#inputPassword4.form-control(type='text', name='firstName')
+      .form-group.col-md-8
+        label(for='inputLastName') Lastname
+        input#inputPassword4.form-control(type='text', name='lastName')
+      .form-group.col-md-8
+        label(for='inputEmail') Email
+        input#inputEmail4.form-control(type='email', name='email')
+      .form-group.col-md-8
+        label(for='inputPassword') Send a message!
+        textarea#textArea4.form-control(name="text", cols="30", rows="10")
+    button.btn.btn-primary(type='submit') Send

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h2 Update user
+  form.form(action="/colleagues/update", method="post")
+    input(type="hidden", name="id", value=user.id)
+    .form-group
+      label Name
+      input.form-control(name="name" value=user.name)
+    .form-group
+      label Job
+      input.form-control(name="job" value=user.job)
+    .form-group
+      label Salary
+      input.form-control(name="salary" value=user.salary)
+    .form-group
+      label Email
+      input.form-control(name="email" value=user.email)
+    .form-group
+      label Password
+      input.form-control(name="password" type="password" value=user.password)
+    .form-group
+      label Token
+      input.form-control(name="token", value=user.token)
+    button.btn.btn-primary(type="submit") Save
